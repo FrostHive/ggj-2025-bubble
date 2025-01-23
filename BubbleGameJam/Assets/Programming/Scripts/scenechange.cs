@@ -1,12 +1,12 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-public class scenechange : MonoBehaviour
+public class SceneChange : MonoBehaviour
 {
     // Reference to the Main Menu Canvas
     public GameObject mainMenuCanvas;
     public GameObject settingCanvas;
     public GameObject winCanvas;
-    public GameObject looseCanvas;
+    public GameObject loseCanvas;
 
     // Method to load a scene by its build index
     //public void Play()
@@ -23,21 +23,21 @@ public class scenechange : MonoBehaviour
         {
             Debug.LogError("Main Menu Canvas is not assigned in the Inspector!");
         }
-        looseCanvas.SetActive(false);
+        loseCanvas.SetActive(false);
         // Add your gameplay start logic here, like enabling player controls
         Debug.Log("Game Started!");
     }
-    public void settings()
+    public void Settings()
     {
         settingCanvas.SetActive(true);
         mainMenuCanvas.SetActive(false);
     }
-    public void back()
+    public void Back()
     {
         settingCanvas.SetActive(false);
         mainMenuCanvas.SetActive(true);
     }
-    public void win()
+    public void Win()
     {
         mainMenuCanvas.SetActive(true);
         winCanvas.SetActive(false);

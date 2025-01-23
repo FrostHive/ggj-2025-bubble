@@ -1172,7 +1172,7 @@ GameObject:
   - component: {fileID: 709824971}
   - component: {fileID: 709824975}
   m_Layer: 5
-  m_Name: Mainmenu
+  m_Name: MainMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1279,7 +1279,7 @@ MonoBehaviour:
   mainMenuCanvas: {fileID: 709824970}
   settingCanvas: {fileID: 1822037093}
   winCanvas: {fileID: 83940873}
-  looseCanvas: {fileID: 574112214}
+  loseCanvas: {fileID: 0}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
