@@ -14,6 +14,7 @@ public class EnemyCombat : MonoBehaviour
 
     private void Start()
     {
+
     }
 
     private void Update()
