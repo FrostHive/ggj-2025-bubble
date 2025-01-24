@@ -4,11 +4,13 @@ using UnityEngine;
 public class EnemyCombat : MonoBehaviour
 {
     //Still to write
-    //- Logic to trap the enemy in bubble
     //- Navigation towards the player
     //
     //Some of these can and should be put into separate scripts
 
+    public int damage;
+
+    [Header("Bubble Trap")]
     [SerializeField] private GameObject bubbleSphereObject;
     [SerializeField] private LayerMask playerLayer;
 
@@ -42,14 +44,14 @@ public class EnemyCombat : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         GameObject collider = collision.gameObject;
-        if (collider.tag == "Bubble")
+        if (collider.CompareTag("Bubble"))
         {
             //Implement TrappedInBubble here
-            bubbleSphereObject.SetActive(true);
+            StartCoroutine(TrappedInBubble());
             trappedInBubble = true;
         }
 
-        if (collider.tag == "Player" && trappedInBubble && PlayerOnTop())
+        if (collider.CompareTag("Player") && trappedInBubble && PlayerOnTop())
         {
             steppedOn = true;
         }
@@ -57,6 +59,7 @@ public class EnemyCombat : MonoBehaviour
     public IEnumerator TrappedInBubble()
     {
         //Play Bubble-trapping animation
+        bubbleSphereObject.SetActive(true);
         yield return null;
     }
     private bool PlayerOnTop()

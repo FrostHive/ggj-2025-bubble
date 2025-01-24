@@ -3,22 +3,24 @@ using UnityEngine;
 
 public class PlayerCombat : MonoBehaviour
 {
+    [SerializeField] private SceneChange sceneChange;
+    [SerializeField] private bool isDead = false;
+
     [SerializeField] private int currentHealth;
     [SerializeField] private int maxHealth = 10;
 
     [SerializeField] private LayerMask enemyLayer; // For enemy stomp detection
     [SerializeField] private float enemyStompBoost = 5f; //Boosts the player whenever they step on a bubbled enemy
-
-
     private void Start()
     {
         currentHealth = maxHealth;
     }
     private void Update()
     {
-        if (currentHealth <= 0)
+        if (currentHealth <= 0 && !isDead)
         {
-            StartCoroutine(Death());
+            StartCoroutine(Death(0));
+            isDead = true;
         }
     }
 
@@ -26,10 +28,9 @@ public class PlayerCombat : MonoBehaviour
     {
         GameObject collider = collision.gameObject;
 
-        if (collider.tag == "Enemy")
+        if (collider.CompareTag("Enemy"))
         {
-            EnemyCombat enemyCombat = collider.GetComponent<EnemyCombat>();
-            if (enemyCombat != null)
+            if (collider.TryGetComponent<EnemyCombat>(out var enemyCombat))
             {
                 if(enemyCombat.trappedInBubble && IsOnEnemy())
                 {
@@ -37,15 +38,26 @@ public class PlayerCombat : MonoBehaviour
                     Vector3 jumpForce = new Vector3(0f, enemyStompBoost, 0f);
                     rb.AddForce(jumpForce, ForceMode.Impulse);
                 }
+
+                else if (!enemyCombat.trappedInBubble)
+                {
+                    StartCoroutine(TakeDamage(enemyCombat.damage));
+                }
+            }
+            else
+            {
+                Debug.LogError("Error: The enemy collider does not have the EnemyCombat component enabled or assigned");
             }
         }
     }
-    private IEnumerator Death()
+    private IEnumerator Death(int seconds)
     {
         //**Play death animation here
-        yield return null;
+        StartCoroutine(sceneChange.LoadGameOverScene(seconds));
 
-        Destroy(gameObject);
+        yield return new WaitForEndOfFrame();
+
+        //gameObject.SetActive(false);
     }
     public IEnumerator TakeDamage(int damageAmount)
     {

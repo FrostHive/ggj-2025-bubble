@@ -1,48 +1,48 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 public class SceneChange : MonoBehaviour
 {
-    // Reference to the Main Menu Canvas
-    public GameObject mainMenuCanvas;
-    public GameObject settingCanvas;
-    public GameObject winCanvas;
-    public GameObject loseCanvas;
+    //This class is meant to become a singleton, however I haven't checked on 
+    //whether or not we want to use singletons. If you find this and want to use one,
+    //let me know and I'll allow it - Allen
 
-    // Method to load a scene by its build index
-    //public void Play()
-    //{
-    //    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex +0);
-    //}
+    // Reference to the Main Menu Canvas
+    public SceneField mainMenuScene;
+    public SceneField level1Scene;
+    public GameObject settingCanvas;
+    public SceneField winScene;
+    public SceneField gameOverScene;
+
     public void StartGame()
     {
-        if (mainMenuCanvas != null)
-        {
-            mainMenuCanvas.SetActive(false); // Hide the Main Menu Canvas
-        }
-        else
-        {
-            Debug.LogError("Main Menu Canvas is not assigned in the Inspector!");
-        }
-        loseCanvas.SetActive(false);
+        SceneManager.LoadScene(level1Scene);
         // Add your gameplay start logic here, like enabling player controls
         Debug.Log("Game Started!");
     }
     public void Settings()
     {
         settingCanvas.SetActive(true);
-        mainMenuCanvas.SetActive(false);
     }
     public void Back()
     {
         settingCanvas.SetActive(false);
-        mainMenuCanvas.SetActive(true);
     }
-    public void Win()
+
+    public void LoadMainMenu()
     {
-        mainMenuCanvas.SetActive(true);
-        winCanvas.SetActive(false);
+        SceneManager.LoadScene(mainMenuScene);
+    }
+    public void LoadWinScene()
+    {
+        SceneManager.LoadScene(winScene);
     }
  
+    public IEnumerator LoadGameOverScene(int seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        SceneManager.LoadScene(gameOverScene);
+    }
     public void QuitGame()
     {
         Debug.Log("Quitting the game...");
