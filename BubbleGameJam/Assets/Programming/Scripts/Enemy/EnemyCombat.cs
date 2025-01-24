@@ -9,12 +9,18 @@ public class EnemyCombat : MonoBehaviour
     //
     //Some of these can and should be put into separate scripts
 
-    private bool trappedInBubble;
-    public bool steppedOn;
+    [SerializeField] private GameObject bubbleSphereObject;
+    [SerializeField] private LayerMask playerLayer;
+
+    public bool trappedInBubble;
+    private bool steppedOn;
+
 
     private void Start()
     {
-
+        bubbleSphereObject.SetActive(false);
+        trappedInBubble = false;
+        steppedOn = false;
     }
 
     private void Update()
@@ -38,8 +44,14 @@ public class EnemyCombat : MonoBehaviour
         GameObject collider = collision.gameObject;
         if (collider.tag == "Bubble")
         {
-            //Implement TrappedInBubble here when bubble mechanic is created
+            //Implement TrappedInBubble here
+            bubbleSphereObject.SetActive(true);
             trappedInBubble = true;
+        }
+
+        if (collider.tag == "Player" && trappedInBubble && PlayerOnTop())
+        {
+            steppedOn = true;
         }
     }
     public IEnumerator TrappedInBubble()
@@ -47,5 +59,9 @@ public class EnemyCombat : MonoBehaviour
         //Play Bubble-trapping animation
         yield return null;
     }
-
+    private bool PlayerOnTop()
+    {
+        // Perform a raycast to check if the player is on top of an enemy
+        return Physics.SphereCast(transform.position, 0.5f, Vector3.up, out RaycastHit hitInfo, 0.5f, playerLayer);
+    }
 }

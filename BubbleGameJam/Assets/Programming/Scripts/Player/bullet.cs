@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class bullet : MonoBehaviour
+public class Bullet : MonoBehaviour
 {
     public float life = 3;
 
@@ -11,10 +11,6 @@ public class bullet : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
-        { 
-        Destroy(collision.gameObject);
-    }
         Destroy(gameObject);
     }
 }
