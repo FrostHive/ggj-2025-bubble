@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class TempWinZone : MonoBehaviour
 {
-    [SerializeField] private SceneChange sceneChange;
+    [SerializeField] private SceneChanger sceneChange;
 
     private void OnTriggerEnter(Collider other)
     {
