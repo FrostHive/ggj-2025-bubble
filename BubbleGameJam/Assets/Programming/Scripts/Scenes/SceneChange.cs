@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-public class SceneChange : MonoBehaviour
+public class SceneChanger : MonoBehaviour
 {
     //This class is meant to become a singleton, however I haven't checked on 
     //whether or not we want to use singletons. If you find this and want to use one,

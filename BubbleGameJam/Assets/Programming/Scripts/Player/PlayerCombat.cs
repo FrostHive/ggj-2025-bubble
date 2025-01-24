@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PlayerCombat : MonoBehaviour
 {
-    [SerializeField] private SceneChange sceneChange;
+    [SerializeField] private SceneChanger sceneChange;
     [SerializeField] private bool isDead = false;
 
     [SerializeField] private int currentHealth;
