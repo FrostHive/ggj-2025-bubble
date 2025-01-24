@@ -1,29 +1,35 @@
 using UnityEngine;
-using UnityEngine.Rendering;
 
 public class Gun : MonoBehaviour
 {
+    public PlayerInputHandler inputHandler;
+
     public Transform bulletSpawnPoint;
-    public GameObject bulletprefab;
-    public float bulletSpeed=20;
-  
+    public GameObject bulletPrefab;
+    public float bulletSpeed = 20f;
+
+    public float fireCooldown = 1f;
+    private float currentCooldownTime = 0f;
+
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (inputHandler.attackTriggered && currentCooldownTime <= 0f)
         {
-            Debug.Log(" enters ");
-            var bullet = Instantiate(bulletprefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
-          //  bullet.GetComponent<Rigidbody>().velocity = bulletSpawnPoint.forward * bulletSpeed *Time.deltaTime;
+            Debug.Log("Bullet has been created");
+            var bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
             if (bullet != null)
             {
-                bullet.GetComponent<Rigidbody>().linearVelocity = bulletSpawnPoint.forward * bulletSpeed;
+                bullet.GetComponent<Rigidbody>().linearVelocity = bulletSpawnPoint.right * bulletSpeed;
+                currentCooldownTime = fireCooldown;
                 Debug.Log("Bullet instantiated and velocity set");
             }
-
         }
         
-
+        if (currentCooldownTime > 0f)
+        {
+            currentCooldownTime -= Time.deltaTime;
+        }
         
     }
 }
