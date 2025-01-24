@@ -14,6 +14,7 @@ public class Gun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+       
         if (inputHandler.attackTriggered && currentCooldownTime <= 0f)
         {
             Debug.Log("Bullet has been created");
