@@ -19,6 +19,7 @@ public class HealthManager : MonoBehaviour
         if (currentHealth <= 0)
         {
             currentHealth = 0;
+            Destroy(gameObject);
             // Handle player death here
         }
         UpdateHealthBar();
@@ -31,7 +32,11 @@ public class HealthManager : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Boss"))
+        if (collision.gameObject.CompareTag("Bubble") || collision.gameObject.CompareTag("Boss"))
+        {
+            TakeDamage(10f); // Example damage value
+        }
+        if (collision.gameObject.CompareTag("Player"))
         {
             TakeDamage(10f); // Example damage value
         }

@@ -5,10 +5,13 @@ public class bossEnemy : MonoBehaviour
 {
     public GameObject[] attackPoints;
     public GameObject bulletPrefab, smallEnemyPrefab, fireballPrefab;
+    public GameObject bubblePrefab; // Bubble visual to show trapping
     public float attackInterval = 1.5f;
     public int attackRepetitions = 4;
     private int currentAttackType = 0;
     private bool isTrapped = false;
+    private GameObject activeBubble; // Reference to the active bubble visual
+
 
     void Start()
     {
@@ -49,15 +52,37 @@ public class bossEnemy : MonoBehaviour
         }
     }
 
+ 
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        // Check if hit by a bubble bullet
+        if (collision.CompareTag("Bubble") && !isTrapped)
+        {
+            TrapBoss();
+            Destroy(collision.gameObject); // Destroy the bubble bullet on collision
+        }
+    }
     public void TrapBoss()
     {
         isTrapped = true;
+
+        // Display bubble visual
+        activeBubble = Instantiate(bubblePrefab, transform.position, Quaternion.identity);
+        activeBubble.transform.SetParent(transform); // Attach bubble to boss
+
+        // Release trap after 5 seconds
         Invoke("ReleaseTrap", 5f);
     }
 
     void ReleaseTrap()
     {
         isTrapped = false;
+        // Destroy bubble visual
+        if (activeBubble != null)
+        {
+            Destroy(activeBubble);
+        }
     }
 }
 
