@@ -6,7 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Bubble
-  - Boss
+  - DeathTrap
   layers:
   - Default
   - TransparentFX
@@ -17,7 +17,7 @@ TagManager:
   - Enemy
   - Ground
   - enemy area
-  - 
+  - Death Zone
   - 
   - 
   - 

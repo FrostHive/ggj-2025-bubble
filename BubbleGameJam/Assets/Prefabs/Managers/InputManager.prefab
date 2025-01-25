@@ -48,6 +48,6 @@ MonoBehaviour:
   actionMapName: Player
   move: Move
   look: Look
-  attack: Attack
+  attack: Shoot
   sprint: Sprint
   jump: Jump
