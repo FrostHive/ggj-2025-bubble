@@ -9,9 +9,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float runMultiplier = 1.5f;
     [SerializeField] private float jumpHeight = 3f;
     [SerializeField] private LayerMask groundLayer; // For ground detection
+    [SerializeField] private float gravityScaleDuringFall = 20.0f; // Scale for gravity effect
 
     private Rigidbody rigidbody;
     private bool hasJumped;
+    private bool fastFall;
+    //test
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -28,6 +31,7 @@ public class PlayerController : MonoBehaviour
 
     private void HandleMovement()
     {
+        
         Vector3 currentMovement = new Vector3(inputHandler.moveInput.x, 0f, 0f) * baseSpeed;
 
         // Check if player is grounded
@@ -39,6 +43,17 @@ public class PlayerController : MonoBehaviour
             Vector3 jumpForce = new Vector3(0f, Mathf.Sqrt(2 * jumpHeight * Physics.gravity.magnitude), 0f);
             rigidbody.AddForce(jumpForce, ForceMode.Impulse);
             hasJumped = true;
+        }
+
+        if (!fastFall)
+        {
+            //if falling
+            if (rigidbody.linearVelocity.y <= -0.5f)
+            {
+                fastFall = true;
+                rigidbody.AddForce(Physics.gravity * gravityScaleDuringFall - Physics.gravity, ForceMode.Acceleration);
+                Debug.Log("fastFall");
+            }
         }
 
         // Apply sprint multiplier if applicable
@@ -56,6 +71,12 @@ public class PlayerController : MonoBehaviour
         if (isGrounded)
         {
             hasJumped = false;
+            //undo bonus gravity in fastfall
+            if(fastFall == true)
+            {
+                fastFall = false;
+                rigidbody.AddForce(-Physics.gravity * gravityScaleDuringFall - Physics.gravity, ForceMode.Acceleration);
+            }            
         }
     }
 
