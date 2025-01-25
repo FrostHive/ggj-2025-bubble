@@ -50,7 +50,8 @@ public class EnemyLogic : MonoBehaviour
                 endPos = points[points.Length - 1].position;
                 break;
             case EnemyType.CHARGE:
-                paraB.enabled = false;
+                if(paraB)
+                    paraB.enabled = false;
                 break;
         }
     }
