@@ -15,6 +15,7 @@ public class PlayerInputHandler : MonoBehaviour
     [SerializeField] private string move = "Move";
     [SerializeField] private string look = "Look";
     [SerializeField] private string attack = "Fire";
+    [SerializeField] private string kick = "Kick";
     [SerializeField] private string sprint = "Sprint";
     [SerializeField] private string jump = "Jump";
 
@@ -22,11 +23,13 @@ public class PlayerInputHandler : MonoBehaviour
     private InputAction moveAction;
     private InputAction lookAction;
     private InputAction attackAction;
+    private InputAction kickAction;
     private InputAction sprintAction;
     private InputAction jumpAction;
     public Vector2 moveInput { get; private set; }
     public Vector2 lookInput { get; private set; }
     public bool attackTriggered { get; private set; }
+    public bool kickTriggered { get; private set; }
     public float sprintValue { get; private set; }
     public bool jumpTriggered { get; private set; }
 
@@ -36,6 +39,7 @@ public class PlayerInputHandler : MonoBehaviour
         moveAction = playerControls.FindActionMap(actionMapName).FindAction(move);
         lookAction = playerControls.FindActionMap(actionMapName).FindAction(look);
         attackAction = playerControls.FindActionMap(actionMapName).FindAction(attack);
+        kickAction = playerControls.FindActionMap(actionMapName).FindAction(kick);
         sprintAction = playerControls.FindActionMap(actionMapName).FindAction(sprint);
         jumpAction = playerControls.FindActionMap(actionMapName).FindAction(jump);
         RegisterInputActions();
@@ -53,6 +57,9 @@ public class PlayerInputHandler : MonoBehaviour
         attackAction.performed += context => attackTriggered = true;
         attackAction.canceled += context => attackTriggered = false;
 
+        kickAction.performed += context => kickTriggered = true;
+        kickAction.canceled += context => kickTriggered = false;
+
         sprintAction.performed += context => sprintValue = context.ReadValue<float>();
         sprintAction.canceled += context => sprintValue = 0f;
 
@@ -65,6 +72,7 @@ public class PlayerInputHandler : MonoBehaviour
         moveAction.Enable();
         lookAction.Enable();
         attackAction.Enable();
+        kickAction.Enable();
         sprintAction.Enable();
         jumpAction.Enable();
     }
@@ -74,6 +82,7 @@ public class PlayerInputHandler : MonoBehaviour
         moveAction.Disable();
         lookAction.Disable();
         attackAction.Disable();
+        kickAction.Disable();
         sprintAction.Disable();
         jumpAction.Disable();
     }

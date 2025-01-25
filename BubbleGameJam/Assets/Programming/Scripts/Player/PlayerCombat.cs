@@ -23,7 +23,6 @@ public class PlayerCombat : MonoBehaviour
             isDead = true;
         }
     }
-
     private void OnCollisionEnter(Collision collision)
     {
         GameObject collider = collision.gameObject;
@@ -48,6 +47,10 @@ public class PlayerCombat : MonoBehaviour
             {
                 Debug.LogError("Error: The enemy collider does not have the EnemyCombat component enabled or assigned");
             }
+        }
+        if(collider.CompareTag("DeathTrap"))
+        {
+            StartCoroutine(TakeDamage(999));
         }
     }
     private IEnumerator Death(int seconds)
