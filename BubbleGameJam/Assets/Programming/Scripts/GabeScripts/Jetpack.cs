@@ -10,6 +10,7 @@ public class Jetpack : MonoBehaviour
     [SerializeField] float jetSpeed = 0f;
     [SerializeField] float forceRate = 1f;
     [SerializeField] float maxSpeed = 10f;
+    [SerializeField] float maxYVelocity = 10f;
     void Start()
     {
         if(playerBody == null)
@@ -46,6 +47,13 @@ public class Jetpack : MonoBehaviour
             Vector3 rBodySpeed = Vector3.zero;
             rBodySpeed.y = jetSpeed;
             playerBody.AddForce(rBodySpeed,ForceMode.Impulse);
+
+            if(playerBody.linearVelocity.y > maxYVelocity)
+            {
+                Vector3 temp = playerBody.linearVelocity;
+                temp.y = maxYVelocity;
+                playerBody.linearVelocity = temp;
+            }
         }
         else if(jetSpeed < 0)
         {
