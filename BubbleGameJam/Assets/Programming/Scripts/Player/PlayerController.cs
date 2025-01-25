@@ -1,3 +1,6 @@
+using System;
+using System.ComponentModel;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -14,7 +17,9 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rigidbody;
     private bool hasJumped;
     private bool fastFall;
-    //test
+    private bool facingRight = true;
+    private float timeCount = 0.0f; //for rotation
+    quaternion facing = new Quaternion(0,0,0,1);
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -67,17 +72,39 @@ public class PlayerController : MonoBehaviour
         velocity.x = currentMovement.x;
         rigidbody.linearVelocity = velocity;
 
-        // Reset jumping state if grounded
+        
         if (isGrounded)
         {
+            // Reset jumping state if grounded
             hasJumped = false;
-            //undo bonus gravity in fastfall
-            if(fastFall == true)
+            //undo bonus gravity from fastfall
+            if (fastFall == true)
             {
                 fastFall = false;
                 rigidbody.AddForce(-Physics.gravity * gravityScaleDuringFall - Physics.gravity, ForceMode.Acceleration);
-            }            
+            }
+            //flip direction of character movement only when on the ground
+            Facing();
         }
+    }
+
+    private void Facing()
+    {
+        //turn right
+        if (rigidbody.linearVelocity.x > 0f && !facingRight)
+        {
+            timeCount = 0;
+            facingRight = true;
+            facing = new Quaternion(0, 0, 0, 1);
+        }
+        if (rigidbody.linearVelocity.x < 0f && facingRight)
+        {
+            timeCount = 0;
+            facingRight = false;
+            facing = new Quaternion(0, 180, 0, 1);
+        }
+        transform.rotation = Quaternion.Slerp(transform.rotation, facing, timeCount);
+        timeCount = timeCount + Time.deltaTime;
     }
 
     private bool IsGrounded()

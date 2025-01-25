@@ -168,6 +168,7 @@ MonoBehaviour:
   move: Move
   look: Look
   attack: Attack
+  kick: Kick
   sprint: Sprint
   jump: Jump
 --- !u!1 &31474094
@@ -871,7 +872,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputHandler: {fileID: 16919788}
-  kickForce: 0
+  kickForce: {x: 0, y: 0, z: 0}
+  kickPoint: {fileID: 0}
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  maxKickCooldown: 0
 --- !u!114 &1149589752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -904,11 +910,11 @@ MonoBehaviour:
   inputHandler: {fileID: 16919788}
   baseSpeed: 5
   runMultiplier: 1.5
-  jumpHeight: 10
+  jumpHeight: 20
   groundLayer:
     serializedVersion: 2
     m_Bits: 128
-  gravityScaleDuringFall: 2
+  gravityScaleDuringFall: 20
 --- !u!114 &1149589754
 MonoBehaviour:
   m_ObjectHideFlags: 0
