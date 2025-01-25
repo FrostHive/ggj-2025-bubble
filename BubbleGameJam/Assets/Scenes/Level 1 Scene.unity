@@ -1424,7 +1424,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 239687654}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: a6b426604373e424aa5da195f6bcd25b, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -3797,7 +3797,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 628549263}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: a6b426604373e424aa5da195f6bcd25b, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -5519,6 +5519,37 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b2cfee77ad0cd24ea7a26b7312d5bea, type: 3}
+--- !u!1 &1002384375
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1002384376}
+  m_Layer: 3
+  m_Name: Kick Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1002384376
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1002384375}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.72, y: -0.179, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1079529140}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1003151016
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6270,8 +6301,9 @@ GameObject:
   - component: {fileID: 1079529141}
   - component: {fileID: 1079529143}
   - component: {fileID: 1079529136}
-  - component: {fileID: 1079529142}
   - component: {fileID: 1079529144}
+  - component: {fileID: 1079529142}
+  - component: {fileID: 1079529145}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -6381,7 +6413,7 @@ Transform:
   m_GameObject: {fileID: 1079529135}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.04, y: 5.58, z: 0}
+  m_LocalPosition: {x: 11.55, y: 1.57, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6389,6 +6421,7 @@ Transform:
   - {fileID: 2104806752}
   - {fileID: 1849896661}
   - {fileID: 1773978079}
+  - {fileID: 1002384376}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &1079529141
@@ -6467,8 +6500,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53cd6b6069217c34f94b99b8dbfad605, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputHandler: {fileID: 0}
-  kickForce: 0
+  inputHandler: {fileID: 16919788}
+  kickForce: {x: 5, y: 2, z: 0}
+  kickPoint: {fileID: 1002384376}
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  maxKickCooldown: 1
+--- !u!114 &1079529145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1079529135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8dae5e572d9e6e24dab0a4f5b732c09e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerBody: {fileID: 0}
+  currentFuel: 100
+  consumptionSpeed: 1
+  maxFuel: 100
+  jetSpeed: 0
+  forceRate: 1
+  maxSpeed: 10
+  maxYVelocity: 10
 --- !u!1 &1097482586
 GameObject:
   m_ObjectHideFlags: 0
@@ -9399,7 +9457,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1683844604}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: a6b426604373e424aa5da195f6bcd25b, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
