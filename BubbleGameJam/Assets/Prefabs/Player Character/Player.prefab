@@ -460,7 +460,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dae5e572d9e6e24dab0a4f5b732c09e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerBody: {fileID: 0}
+  playerBody: {fileID: 1192836644091194811}
   currentFuel: 100
   consumptionSpeed: 1
   maxFuel: 100
