@@ -1,0 +1,32 @@
+# Blender 4.3.2 MTL File: 'Trash_Can_006.blend'
+# www.blender.org
+
+newmtl Trash_Can_Lid_Handle
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 3
+map_Kd D:/Blender/4.3/Projects/Global Game Jam 2025/Trash_Can_Lid_Handle_Mat.png
+
+newmtl Trash_Can_Lid_Mat
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 3
+map_Kd D:/Blender/4.3/Projects/Global Game Jam 2025/Trash_Can_Lid_Mat.png
+
+newmtl Trash_Can_Mat
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 3
+map_Kd D:/Blender/4.3/Projects/Global Game Jam 2025/Trash_Can_Mat.png
