@@ -29,7 +29,7 @@ public class EnemyLogic : MonoBehaviour
     bool charging = false;
     Vector3 chargeTarget;
 
-    void Awake()
+    void Start()
     {
         rBody = GetComponent<Rigidbody>();
         player = GameObject.FindGameObjectWithTag("Player");
@@ -50,8 +50,6 @@ public class EnemyLogic : MonoBehaviour
                 endPos = points[points.Length - 1].position;
                 break;
             case EnemyType.CHARGE:
-                if(paraB)
-                    paraB.enabled = false;
                 break;
         }
     }
@@ -91,6 +89,7 @@ public class EnemyLogic : MonoBehaviour
                         reachedDestination = false;
                         timer = 0;
                         paraB.FollowParabola();
+                        
                     }
                 }
                
@@ -120,6 +119,7 @@ public class EnemyLogic : MonoBehaviour
                         {
                             charging = true;
                             chargeTarget = player.transform.position;
+                            //AudioManager.PlaySound(0);//change source to whatver sound we want
                         }
                 }
                 break;
@@ -127,8 +127,15 @@ public class EnemyLogic : MonoBehaviour
         }
     }
 
+
+    public void DefeatEnemy()
+    {
+        //play death animation
+        active = false;
+    }
     void PlayAnimation(string animationName)
     {
         animator.SetBool(animationName, true);
     }
+
 }
