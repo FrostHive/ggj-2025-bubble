@@ -101,26 +101,30 @@ public class BossCombat : MonoBehaviour
         }
     }
 
+    public void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+    }
     private void GunkShot()
     {
-        Debug.Log("Boss Bullet has been created");
+        //Debug.Log("Boss Bullet has been created");
         var bullet = Instantiate(filthProjectile, projectileSpawnPoint.position, projectileSpawnPoint.rotation);
         if (bullet != null)
         {
             bullet.GetComponent<Rigidbody>().linearVelocity = facingRight ? Vector3.left * projectileSpeed : Vector3.right * projectileSpeed;
             currentAttackCooldown = maxAttackCooldown;
-            Debug.Log("Boss Bullet instantiated and velocity set");
+           // Debug.Log("Boss Bullet instantiated and velocity set");
         }
     }
     private void ChargerThrow()
     {
-        Debug.Log("Charger has been created");
+        //Debug.Log("Charger has been created");
         var chargerMinion = Instantiate(chargerPrefab, projectileSpawnPoint.position, projectileSpawnPoint.rotation);
         if (chargerMinion != null)
         {
             chargerMinion.GetComponent<Rigidbody>().linearVelocity = facingRight ? Vector3.left * projectileSpeed: Vector3.right * projectileSpeed;
             currentAttackCooldown = maxAttackCooldown;
-            Debug.Log("Charger instantiated and velocity set");
+            //Debug.Log("Charger instantiated and velocity set");
         }
     }
 
@@ -137,7 +141,7 @@ public class BossCombat : MonoBehaviour
         //turn right when moving right
         if (!facingRight)
         {
-            Debug.Log("Now facing right");
+            //Debug.Log("Now facing right");
             facingRight = true;
             transform.rotation = new Quaternion(0, 0, 0, 1);
             return;
@@ -145,7 +149,7 @@ public class BossCombat : MonoBehaviour
         //turn left when moving left
         if (facingRight)
         {
-            Debug.Log("Now facing left");
+            //Debug.Log("Now facing left");
             facingRight = false;
             transform.rotation = new Quaternion(0, 180, 0, 1);
             return;

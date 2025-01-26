@@ -26,6 +26,7 @@ public class PlayerKick : MonoBehaviour
                 if (enemyCombat != null && enemyCombat.trappedInBubble)
                 {
                     enemyBody.AddForce(kickForce, ForceMode.Impulse);
+                    enemyCombat.kicked = true;
                 }
             }
 

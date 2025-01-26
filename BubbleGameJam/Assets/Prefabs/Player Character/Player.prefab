@@ -229,7 +229,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputHandler: {fileID: 0}
-  kickForce: {x: 5, y: 2, z: 0}
+  kickForce: {x: 10, y: 2, z: 0}
   kickPoint: {fileID: 2895165591151970663}
   enemyLayer:
     serializedVersion: 2
