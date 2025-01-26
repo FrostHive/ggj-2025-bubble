@@ -45,7 +45,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -181,9 +181,11 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 17e1a143969914d4983a1985fb3c3dd3, type: 3}
   - {fileID: 8300000, guid: c1c6581483f92414f8a7dab4d7cdfe8a, type: 3}
   sounds:
+  - {fileID: 8300000, guid: a24d5b4d2c9e2b349a458eb52de0aa00, type: 3}
   - {fileID: 8300000, guid: 0fd5bcc80dfe8e642bf460d64f4cab82, type: 3}
   - {fileID: 8300000, guid: 972d89eff1528514a861bafc541bea2c, type: 3}
-  - {fileID: 8300000, guid: a24d5b4d2c9e2b349a458eb52de0aa00, type: 3}
+  - {fileID: 8300000, guid: 5189d1d33116fb04c9408d451d805ae4, type: 3}
+  - {fileID: 8300000, guid: 5d9f35dc4511f1343b213bbf9dd398da, type: 3}
   bgSource: {fileID: 8908522707820913027}
   audioSource: {fileID: 265192078483690878}
   audioMixer: {fileID: 24100000, guid: 867d0aee56ba3f64cb54a5b972abf329, type: 2}
