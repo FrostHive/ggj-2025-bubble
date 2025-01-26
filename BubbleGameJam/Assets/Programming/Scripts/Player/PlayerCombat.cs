@@ -59,7 +59,7 @@ public class PlayerCombat : MonoBehaviour
     private IEnumerator Death(int seconds)
     {
         //**Play death animation here
-        AudioManager.PlaySound(4);
+        AudioManager.PlaySoundAtSource(4,GetComponent<AudioSource>());
         StartCoroutine(sceneChange.LoadGameOverScene(seconds));
 
         yield return new WaitForEndOfFrame();

@@ -42,6 +42,18 @@ public class AudioManager : MonoBehaviour
             ACTIVEMIXER.audioSource.Play();
         }
     }
+    static public void PlaySoundAtSource(int index,AudioSource source)
+    {
+        AudioClip fClip = ACTIVEMIXER.sounds[index];
+        source.clip = fClip;
+        source.Play();
+    }
+    static public void PlaySoundAtSource(string name, AudioSource source)
+    {
+        AudioClip fClip = ACTIVEMIXER.GetSound(name);
+        source.clip = fClip;
+        source.Play();
+    }
 
     static public void PlayBgMusic()
     {

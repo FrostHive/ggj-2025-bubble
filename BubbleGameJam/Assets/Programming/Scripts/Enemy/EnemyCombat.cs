@@ -14,6 +14,7 @@ public class EnemyCombat : MonoBehaviour
     [SerializeField] private GameObject bubbleSphereObject;
     [SerializeField] private LayerMask playerLayer;
 
+    public bool kicked = false;
     public bool trappedInBubble;
     private bool steppedOn;
 
@@ -56,6 +57,17 @@ public class EnemyCombat : MonoBehaviour
         if (collider.CompareTag("Player") && trappedInBubble && PlayerOnTop())
         {
             steppedOn = true;
+        }
+        else if (collider.CompareTag("Enemy") && kicked)
+        {
+            steppedOn = true;
+            if (collider.GetComponent<BossCombat>())
+            {
+                collider.GetComponent<BossCombat>().TakeDamage(10);
+                return;
+            }
+
+            collider.GetComponent<EnemyCombat>().steppedOn = true;          
         }
     }
     public IEnumerator TrappedInBubble()
