@@ -27,6 +27,7 @@ public class PlayerKick : MonoBehaviour
                 {
                     enemyBody.AddForce(kickForce, ForceMode.Impulse);
                     enemyCombat.kicked = true;
+                    AudioManager.PlaySoundAtSource("PlayerKick_1", GetComponent<AudioSource>());
                 }
             }
 
