@@ -175,7 +175,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0def293c3d721fc488ef2ded38a747ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bgSounds: []
+  bgSounds:
+  - {fileID: 8300000, guid: 5165ecf167989ff4692cc25eafe763b3, type: 3}
+  - {fileID: 8300000, guid: e93216a89bc5dd841a6d0a3d5d5e6017, type: 3}
+  - {fileID: 8300000, guid: 17e1a143969914d4983a1985fb3c3dd3, type: 3}
+  - {fileID: 8300000, guid: c1c6581483f92414f8a7dab4d7cdfe8a, type: 3}
   sounds:
   - {fileID: 8300000, guid: 0fd5bcc80dfe8e642bf460d64f4cab82, type: 3}
   - {fileID: 8300000, guid: 972d89eff1528514a861bafc541bea2c, type: 3}
