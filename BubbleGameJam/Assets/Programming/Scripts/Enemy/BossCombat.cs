@@ -4,10 +4,15 @@ using UnityEngine.UIElements.Experimental;
 
 public class BossCombat : MonoBehaviour
 {
+    [Header("General")]
+    [SerializeField] private SceneChanger sceneChanger;
     [SerializeField] private bool isDead;
     public bool fightHasStarted;
+    [SerializeField] private float maxHealth = 10f;
+    [SerializeField] private float currentHealth;
 
     [SerializeField] private float maxAttackCooldown = 5f;
+    [SerializeField] private float attackCooldownAfterJump = 0.4f;
     private float currentAttackCooldown;
     [Header("Gunk Shot/Charger Throw Ratio")]
     [SerializeField, Range(0f, 1f)] private float gunkChargerRatio = 0.5f;
@@ -30,6 +35,7 @@ public class BossCombat : MonoBehaviour
     private Rigidbody rigidbody;
     private void Start()
     {
+        currentHealth = maxHealth;
         currentAttackCooldown = .1f;
         if(rigidbody == null)
         {
@@ -41,11 +47,12 @@ public class BossCombat : MonoBehaviour
     {
         if(isDead)
         {
+            sceneChanger.LoadWinScene();
             return;
         }
         if(fightHasStarted)
         {
-            if (currentAttackCooldown <= 0f & IsGrounded())
+            if (currentAttackCooldown <= 0f && IsGrounded())
             {
                 float randomAttack = Random.Range(0f, 1f);
                 if (randomAttack < gunkChargerRatio)
@@ -60,7 +67,7 @@ public class BossCombat : MonoBehaviour
                 }
 
             }
-            else
+            else if (currentAttackCooldown >= 0f && IsGrounded())
             {
                 currentAttackCooldown -= Time.fixedDeltaTime;
             }
@@ -70,11 +77,30 @@ public class BossCombat : MonoBehaviour
                 hasLanded = IsGrounded();
                 if (hasLanded)
                 {
-                    Facing();
+                    Flip();
+                }
+                else
+                {
+                    currentAttackCooldown = attackCooldownAfterJump;
                 }
             }
         }
+        if (currentHealth < 0f)
+        {
+            isDead = true;
+        }
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        GameObject collider = collision.gameObject;
+
+        if (collider.CompareTag("Bubble"))
+        {
+            currentHealth -= 5f; //Temporary health
+        }
+    }
+
     private void GunkShot()
     {
         Debug.Log("Boss Bullet has been created");
@@ -86,15 +112,6 @@ public class BossCombat : MonoBehaviour
             Debug.Log("Boss Bullet instantiated and velocity set");
         }
     }
-
-    private bool IsGrounded()
-    {
-        // Perform a raycast to check if the player is touching the ground
-        bool touchingGround = Physics.Raycast(groundDetectionPoint.position, Vector3.down, 0.5f, groundLayer);
-        Debug.Log($"Touching ground: {touchingGround}");
-        return touchingGround;
-    }
-
     private void ChargerThrow()
     {
         Debug.Log("Charger has been created");
@@ -107,19 +124,31 @@ public class BossCombat : MonoBehaviour
         }
     }
 
-    private void Facing()
+    private bool IsGrounded()
+    {
+        // Perform a raycast to check if the player is touching the ground
+        bool touchingGround = Physics.Raycast(groundDetectionPoint.position, Vector3.down, 0.5f, groundLayer);
+        return touchingGround;
+    }
+
+
+    private void Flip()
     {
         //turn right when moving right
         if (!facingRight)
         {
+            Debug.Log("Now facing right");
             facingRight = true;
             transform.rotation = new Quaternion(0, 0, 0, 1);
+            return;
         }
         //turn left when moving left
         if (facingRight)
         {
+            Debug.Log("Now facing left");
             facingRight = false;
             transform.rotation = new Quaternion(0, 180, 0, 1);
+            return;
         }
     }
 }

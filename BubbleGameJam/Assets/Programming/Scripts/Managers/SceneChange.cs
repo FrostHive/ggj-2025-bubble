@@ -15,6 +15,16 @@ public class SceneChanger : MonoBehaviour
     public SceneField winScene;
     public SceneField gameOverScene;
 
+    [SerializeField] private Animator loadScreenAnim;
+    public void Start()
+    {
+        if (!loadScreenAnim)
+            loadScreenAnim = gameObject.GetComponentInChildren<Animator>();
+        loadScreenAnim.Play("FadeIn");
+
+        PlayBGMusic();
+    }
+
     public void StartGame()
     {
         SceneManager.LoadScene(level1Scene);
@@ -32,16 +42,19 @@ public class SceneChanger : MonoBehaviour
 
     public void LoadBossScene()
     {
-        SceneManager.LoadScene(bossScene);
+        //SceneManager.LoadSceneAsync(bossScene);
+        StartCoroutine(LoadSceneAsync(bossScene));
     }
 
     public void LoadMainMenu()
     {
-        SceneManager.LoadScene(mainMenuScene);
+        //SceneManager.LoadScene(mainMenuScene);
+        StartCoroutine(LoadSceneAsync(mainMenuScene));
     }
     public void LoadWinScene()
     {
-        SceneManager.LoadScene(winScene);
+        //SceneManager.LoadScene(winScene);
+        StartCoroutine(LoadSceneAsync(winScene));
     }
  
     public IEnumerator LoadGameOverScene(int seconds)
@@ -49,9 +62,49 @@ public class SceneChanger : MonoBehaviour
         yield return new WaitForSeconds(seconds);
         SceneManager.LoadScene(gameOverScene);
     }
+
+    IEnumerator LoadSceneAsync(string sceneName)
+    {
+        //Fade in black screen
+        loadScreenAnim.Play("FadeOut");
+        yield return new WaitForSecondsRealtime(.75f);
+
+        // Start loading the scene asynchronously and store the operation
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
+
+        // Wait until the asynchronous scene fully loads
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
+
+        loadScreenAnim.Play("FadeIn");
+    }
     public void QuitGame()
     {
         Debug.Log("Quitting the game...");
         Application.Quit();
+    }
+
+    void PlayBGMusic()
+    {
+        int currentScene = SceneManager.GetActiveScene().buildIndex;
+ 
+        switch (currentScene)
+        { 
+            case 0: //menu scene
+                AudioManager.PlayBgMusic(0);
+                break;
+            case 1://level 1 scene
+                AudioManager.PlayBgMusic(1);
+                break;
+            case 2:// boss scene
+                AudioManager.PlayBgMusic(2);
+                break;
+            case 3: // win scene
+                break;
+            case 4:// game over
+                break;
+        }
     }
 }
