@@ -37,15 +37,16 @@ public class BossCombat : MonoBehaviour
         {
             if (currentAttackCooldown <= 0f & IsGrounded())
             {
-                int randomAttack = Random.Range(0, 100);
-                if (randomAttack < gunkChargerRatio)
+                float randomAttack = Random.Range(0f, 1f);
+                if (randomAttack< gunkChargerRatio)
                 {
                     GunkShot();
                     currentAttackCooldown = maxAttackCooldown;
                 }
                 else
                 {
-
+                    ChargerThrow();
+                    currentAttackCooldown = maxAttackCooldown;
                 }
             }
             else
@@ -77,10 +78,10 @@ public class BossCombat : MonoBehaviour
     private void ChargerThrow()
     {
         Debug.Log("Charger has been created");
-        var bullet = Instantiate(filthProjectile, projectileSpawnPoint.position, projectileSpawnPoint.rotation);
-        if (bullet != null)
+        var chargerMinion = Instantiate(chargerPrefab, projectileSpawnPoint.position, projectileSpawnPoint.rotation);
+        if (chargerMinion != null)
         {
-            bullet.GetComponent<Rigidbody>().linearVelocity = Vector3.left * projectileSpeed;
+            chargerMinion.GetComponent<Rigidbody>().linearVelocity = Vector3.left * projectileSpeed;
             currentAttackCooldown = maxAttackCooldown;
             Debug.Log("Charger instantiated and velocity set");
         }
