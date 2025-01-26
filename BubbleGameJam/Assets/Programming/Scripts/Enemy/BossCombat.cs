@@ -69,7 +69,9 @@ public class BossCombat : MonoBehaviour
     private bool IsGrounded()
     {
         // Perform a raycast to check if the player is touching the ground
-        return Physics.Raycast(transform.position, Vector3.down, 0.1f, groundLayer);
+        bool touchingGround = Physics.Raycast(transform.position, Vector3.down, 0.1f, groundLayer);
+        Debug.Log($"Touching ground: {touchingGround}");
+        return touchingGround;
     }
 
     private void ChargerThrow()
