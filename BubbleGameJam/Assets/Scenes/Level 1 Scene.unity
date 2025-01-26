@@ -5853,6 +5853,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7907356276706047331, guid: a28cf3e35b315cf4c81896e87d90879f, type: 3}
+      propertyPath: sounds.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7907356276706047331, guid: a28cf3e35b315cf4c81896e87d90879f, type: 3}
+      propertyPath: 'sounds.Array.data[5]'
+      value: 
+      objectReference: {fileID: 8300000, guid: a8540086c2dc88046ac6e8c41b76d099, type: 3}
+    - target: {fileID: 7907356276706047331, guid: a28cf3e35b315cf4c81896e87d90879f, type: 3}
+      propertyPath: 'sounds.Array.data[6]'
+      value: 
+      objectReference: {fileID: 8300000, guid: ebdbea226a4af2b44ac2f3b82b9474fd, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8295,6 +8307,10 @@ PrefabInstance:
     - target: {fileID: 2423497767596572986, guid: 966fd3b1b9972174d886563b53a8f80b, type: 3}
       propertyPath: m_Name
       value: DialogueManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 2423497767596572986, guid: 966fd3b1b9972174d886563b53a8f80b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4189039711969011314, guid: 966fd3b1b9972174d886563b53a8f80b, type: 3}
       propertyPath: m_LocalPosition.x
