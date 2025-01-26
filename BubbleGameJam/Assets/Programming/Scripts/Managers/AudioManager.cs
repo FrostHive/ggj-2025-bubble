@@ -14,7 +14,7 @@ public class AudioManager : MonoBehaviour
     public AudioMixer audioMixer;
 
 
-    void Start()
+    void Awake()
     {
         if (ACTIVEMIXER == null)
         {
@@ -22,16 +22,7 @@ public class AudioManager : MonoBehaviour
             if (audioSource == null) audioSource = FindFirstObjectByType<AudioSource>();
             if (bgSource == null) bgSource = audioSource;
         }
-
-        //if(bgSounds.Length > 0) bgSource.clip = bgSounds[0];
-        //PlayBgMusic();
     }
-
-    private void OnLevelWasLoaded(int level)
-    {
-        
-    }
-    //default playsound, assues position is at (0,0,0)
 
     static public void PlaySound(string name)
     {
