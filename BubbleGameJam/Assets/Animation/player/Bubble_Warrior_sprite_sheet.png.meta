@@ -144,7 +144,7 @@ TextureImporter:
         width: 663
         height: 775
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -166,7 +166,7 @@ TextureImporter:
         width: 687
         height: 786
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -188,7 +188,7 @@ TextureImporter:
         width: 690
         height: 792
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -210,7 +210,7 @@ TextureImporter:
         width: 677
         height: 787
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -232,7 +232,7 @@ TextureImporter:
         width: 640
         height: 731
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -254,7 +254,7 @@ TextureImporter:
         width: 612
         height: 799
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -268,270 +268,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bubble_Warrior_sprite_sheet_6
-      rect:
-        serializedVersion: 2
-        x: 3445
-        y: 1195
-        width: 48
-        height: 52
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4b1f57c80896a67419d1b098bf04dc2b
-      internalID: 1674179450
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bubble_Warrior_sprite_sheet_7
-      rect:
-        serializedVersion: 2
-        x: 3495
-        y: 1175
-        width: 57
-        height: 62
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f57e3e060393deb41b2eedd88ef86a76
-      internalID: 1077898838
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bubble_Warrior_sprite_sheet_8
-      rect:
-        serializedVersion: 2
-        x: 3570
-        y: 1185
-        width: 209
-        height: 62
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 03692cbd846fc86428c7fcb2b3fcf1aa
-      internalID: -679975767
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bubble_Warrior_sprite_sheet_9
-      rect:
-        serializedVersion: 2
-        x: 3789
-        y: 1195
-        width: 55
-        height: 51
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 047053f25e8c1824c92264f1b4b25179
-      internalID: -1918615662
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bubble_Warrior_sprite_sheet_10
-      rect:
-        serializedVersion: 2
-        x: 3861
-        y: 1195
-        width: 102
-        height: 54
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 384c10c3addb4ed499341ef4d57c6351
-      internalID: -1710173795
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bubble_Warrior_sprite_sheet_11
-      rect:
-        serializedVersion: 2
-        x: 3978
-        y: 1195
-        width: 25
-        height: 52
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1e64fbca573a1f34499018e8d6fe7835
-      internalID: -1259194799
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bubble_Warrior_sprite_sheet_12
-      rect:
-        serializedVersion: 2
-        x: 4006
-        y: 1197
-        width: 9
-        height: 50
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 59b7c3368c936ac4a9f9ca240707db1f
-      internalID: 1254165603
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bubble_Warrior_sprite_sheet_13
-      rect:
-        serializedVersion: 2
-        x: 4016
-        y: 1195
-        width: 22
-        height: 39
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e6edfd828b277a148b3c6f97cec4157e
-      internalID: 419194874
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bubble_Warrior_sprite_sheet_14
-      rect:
-        serializedVersion: 2
-        x: 4055
-        y: 1175
-        width: 83
-        height: 74
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 076fe968228369c45a2f58ec09100417
-      internalID: 1827893651
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bubble_Warrior_sprite_sheet_15
-      rect:
-        serializedVersion: 2
-        x: 4155
-        y: 1175
-        width: 149
-        height: 74
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 381475e4b5415da459fd52eaa545a8e2
-      internalID: -1422744609
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bubble_Warrior_sprite_sheet_16
-      rect:
-        serializedVersion: 2
-        x: 136
-        y: 1142
-        width: 52
-        height: 52
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4813fde668b465840983ea12e98c91a1
-      internalID: 1601188812
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bubble_Warrior_sprite_sheet_17
-      rect:
-        serializedVersion: 2
-        x: 191
-        y: 1122
-        width: 109
-        height: 72
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0db03fe9cd31af443a93428f0b1dead3
-      internalID: -1290955965
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Bubble_Warrior_sprite_sheet_18
       rect:
         serializedVersion: 2
@@ -540,7 +276,7 @@ TextureImporter:
         width: 662
         height: 772
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -562,7 +298,7 @@ TextureImporter:
         width: 798
         height: 800
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -579,12 +315,12 @@ TextureImporter:
       name: Bubble_Warrior_sprite_sheet_20
       rect:
         serializedVersion: 2
-        x: 1774
+        x: 1773
         y: 183
         width: 757
         height: 787
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -606,7 +342,7 @@ TextureImporter:
         width: 5
         height: 5
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -624,11 +360,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2741
-        y: 282
+        y: 191
         width: 617
-        height: 698
+        height: 787
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -650,7 +386,7 @@ TextureImporter:
         width: 672
         height: 774
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -672,7 +408,7 @@ TextureImporter:
         width: 707
         height: 791
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -681,248 +417,6 @@ TextureImporter:
       bones: []
       spriteID: 06197e56309627f4b91af27043f55dec
       internalID: 1887767000
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bubble_Warrior_sprite_sheet_25
-      rect:
-        serializedVersion: 2
-        x: 196
-        y: 29
-        width: 201
-        height: 72
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: daa7c5ad427b3a549b1f78b9e1182eab
-      internalID: -1166134546
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bubble_Warrior_sprite_sheet_26
-      rect:
-        serializedVersion: 2
-        x: 2751
-        y: 81
-        width: 89
-        height: 52
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c61530bc29e59bb4abe08b26eb605bbe
-      internalID: -1556941566
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bubble_Warrior_sprite_sheet_27
-      rect:
-        serializedVersion: 2
-        x: 2858
-        y: 71
-        width: 43
-        height: 62
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b9cdc6a955f606544aaeb39eafde4464
-      internalID: 1852881684
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bubble_Warrior_sprite_sheet_28
-      rect:
-        serializedVersion: 2
-        x: 2902
-        y: 81
-        width: 33
-        height: 52
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 93d1ac5ec17db8a44863e8d6daf083ed
-      internalID: 1630693760
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bubble_Warrior_sprite_sheet_29
-      rect:
-        serializedVersion: 2
-        x: 2952
-        y: 61
-        width: 82
-        height: 72
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 776ed66f1544cb948aeb974be0f3492a
-      internalID: -1630661252
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bubble_Warrior_sprite_sheet_30
-      rect:
-        serializedVersion: 2
-        x: 3049
-        y: 81
-        width: 120
-        height: 52
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3f589af6b4cadff47a2b70bdf3b93ac6
-      internalID: 1284800368
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bubble_Warrior_sprite_sheet_31
-      rect:
-        serializedVersion: 2
-        x: 3185
-        y: 81
-        width: 49
-        height: 52
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0365241f376ee0c4e98784e832fc28da
-      internalID: 16792902
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bubble_Warrior_sprite_sheet_32
-      rect:
-        serializedVersion: 2
-        x: 3249
-        y: 61
-        width: 151
-        height: 72
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 689763d61b7b82146bc95da144a2ffb8
-      internalID: -741925819
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bubble_Warrior_sprite_sheet_33
-      rect:
-        serializedVersion: 2
-        x: 4369
-        y: 101
-        width: 27
-        height: 52
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c38b7145af096424984a4efaafc17ce6
-      internalID: -310006287
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bubble_Warrior_sprite_sheet_34
-      rect:
-        serializedVersion: 2
-        x: 4397
-        y: 81
-        width: 126
-        height: 62
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c535ecd2b23c0c94c8288e09a160022d
-      internalID: -1037746063
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bubble_Warrior_sprite_sheet_35
-      rect:
-        serializedVersion: 2
-        x: 86
-        y: 1114
-        width: 222
-        height: 82
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fc994219c8ed2dc47ad1977353b69587
-      internalID: -1085724639
       vertices: []
       indices: 
       edges: []
@@ -971,6 +465,7 @@ TextureImporter:
       Bubble_Warrior_sprite_sheet_33: -310006287
       Bubble_Warrior_sprite_sheet_34: -1037746063
       Bubble_Warrior_sprite_sheet_35: -1085724639
+      Bubble_Warrior_sprite_sheet_36: 689501074
       Bubble_Warrior_sprite_sheet_4: 1361450796
       Bubble_Warrior_sprite_sheet_5: 327899697
       Bubble_Warrior_sprite_sheet_6: 1674179450
