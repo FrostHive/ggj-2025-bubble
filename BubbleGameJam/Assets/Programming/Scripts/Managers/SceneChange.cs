@@ -10,6 +10,7 @@ public class SceneChanger : MonoBehaviour
     // Reference to the Main Menu Canvas
     public SceneField mainMenuScene;
     public SceneField level1Scene;
+    public SceneField bossScene;
     public GameObject settingCanvas;
     public SceneField winScene;
     public SceneField gameOverScene;
@@ -27,6 +28,11 @@ public class SceneChanger : MonoBehaviour
     public void Back()
     {
         settingCanvas.SetActive(false);
+    }
+
+    public void LoadBossScene()
+    {
+        SceneManager.LoadScene(bossScene);
     }
 
     public void LoadMainMenu()
