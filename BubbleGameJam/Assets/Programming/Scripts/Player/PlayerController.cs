@@ -25,6 +25,8 @@ public class PlayerController : MonoBehaviour
     private bool facingRight = true;
     private float timeCount = 0.0f; //for rotation
     quaternion facing = new Quaternion(0,0,0,1);
+    private float walkTimer = 0.3f;
+    private float timer = 0;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -56,6 +58,7 @@ public class PlayerController : MonoBehaviour
             usedJumps += 1;
             timeSinceJump = 0;
             letGoOfJump = false;
+            timer = 0;
         }
         // Cooldown the jump
         // player has to let go of jump button to jump again
@@ -85,7 +88,16 @@ public class PlayerController : MonoBehaviour
         transform.rotation = facing;
         //transform.rotation = Quaternion.Slerp(transform.rotation, facing, timeCount);
         //timeCount = timeCount + Time.deltaTime;
-        
+        if (isGrounded && currentMovement.x != 0) 
+        {
+            timer += Time.deltaTime;
+            if (timer > walkTimer)
+            {
+                AudioManager.PlayOneShot(3, 5f);
+                timer = 0;
+            }
+        }
+
         if (isGrounded)
         {
             // Reset jumping state if grounded and off cooldown

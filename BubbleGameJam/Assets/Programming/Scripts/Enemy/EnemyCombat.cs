@@ -36,6 +36,7 @@ public class EnemyCombat : MonoBehaviour
     private IEnumerator Death()
     {
         //**Play death animation here
+        AudioManager.PlaySound(2);
         yield return null;
 
         Destroy(gameObject);
@@ -47,6 +48,7 @@ public class EnemyCombat : MonoBehaviour
         if (collider.CompareTag("Bubble"))
         {
             //Implement TrappedInBubble here
+            AudioManager.PlaySound(1);
             StartCoroutine(TrappedInBubble());
             trappedInBubble = true;
         }
@@ -60,6 +62,7 @@ public class EnemyCombat : MonoBehaviour
     {
         //Play Bubble-trapping animation
         bubbleSphereObject.SetActive(true);
+        GetComponent<EnemyLogic>().DefeatEnemy();
         yield return null;
     }
     private bool PlayerOnTop()

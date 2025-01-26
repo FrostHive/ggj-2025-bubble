@@ -17,14 +17,13 @@ public class Gun : MonoBehaviour
        
         if (inputHandler.attackTriggered && currentCooldownTime <= 0f)
         {
-            Debug.Log("Bullet has been created");
             var bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
             if (bullet != null)
             {
                 bullet.GetComponent<Rigidbody>().linearVelocity = bulletSpawnPoint.right * bulletSpeed;
                 currentCooldownTime = fireCooldown;
-                Debug.Log("Bullet instantiated and velocity set");
             }
+            AudioManager.PlaySound(0);
         }
         
         if (currentCooldownTime > 0f)
