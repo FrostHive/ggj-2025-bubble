@@ -81,7 +81,7 @@ public class BossCombat : MonoBehaviour
         var bullet = Instantiate(filthProjectile, projectileSpawnPoint.position, projectileSpawnPoint.rotation);
         if (bullet != null)
         {
-            bullet.GetComponent<Rigidbody>().linearVelocity = Vector3.left * projectileSpeed;
+            bullet.GetComponent<Rigidbody>().linearVelocity = facingRight ? Vector3.left * projectileSpeed : Vector3.right * projectileSpeed;
             currentAttackCooldown = maxAttackCooldown;
             Debug.Log("Boss Bullet instantiated and velocity set");
         }
@@ -101,7 +101,7 @@ public class BossCombat : MonoBehaviour
         var chargerMinion = Instantiate(chargerPrefab, projectileSpawnPoint.position, projectileSpawnPoint.rotation);
         if (chargerMinion != null)
         {
-            chargerMinion.GetComponent<Rigidbody>().linearVelocity = Vector3.left * projectileSpeed;
+            chargerMinion.GetComponent<Rigidbody>().linearVelocity = facingRight ? Vector3.left * projectileSpeed: Vector3.right * projectileSpeed;
             currentAttackCooldown = maxAttackCooldown;
             Debug.Log("Charger instantiated and velocity set");
         }

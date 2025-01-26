@@ -1991,7 +1991,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   groundDetectionPoint: {fileID: 1638015019}
-  facingRight: 0
+  facingRight: 1
 --- !u!114 &1146096192
 MonoBehaviour:
   m_ObjectHideFlags: 0
