@@ -1,4 +1,3 @@
-using System;
 using System.ComponentModel;
 using Unity.Mathematics;
 using Unity.VisualScripting;
@@ -7,6 +6,8 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private PlayerInputHandler inputHandler;
+    [Header("Animation")]
+    [SerializeField] private Animator animator;
 
     [Header("Movement")]
     [SerializeField] private float baseSpeed = 5f;
@@ -33,6 +34,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
+        animator = GetComponent<Animator>();
     }
 
     // FixedUpdate for physics
@@ -50,7 +52,7 @@ public class PlayerController : MonoBehaviour
 
         // Check if player is grounded
         bool isGrounded = IsGrounded();
-        
+        animator.SetBool("HasLanded", isGrounded);
         // Handle jumping
         if (inputHandler.jumpTriggered && usedJumps < maxJumps && timeSinceJump > jumpCooldown && letGoOfJump)
         {
@@ -133,7 +135,7 @@ public class PlayerController : MonoBehaviour
     private bool IsGrounded()
     {
         // Perform a raycast to check if the player is touching the ground
-        return Physics.Raycast(transform.position, Vector3.down, 0.5f, groundLayer);
+        return Physics.Raycast(transform.position, Vector3.down, 1.2f, groundLayer);
     }
 
     public void Dead()
