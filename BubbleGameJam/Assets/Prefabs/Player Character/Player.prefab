@@ -391,7 +391,7 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 64
-  enemyStompBoost: 50
+  enemyStompBoost: 150
 --- !u!114 &2845158637107633109
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -412,6 +412,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   gravityScaleDuringFall: 20
+  jumpCooldown: 0.25
+  maxJumps: 2
 --- !u!114 &8131913330861741383
 MonoBehaviour:
   m_ObjectHideFlags: 0
