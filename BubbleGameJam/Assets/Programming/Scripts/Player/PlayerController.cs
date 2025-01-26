@@ -29,12 +29,14 @@ public class PlayerController : MonoBehaviour
     private float walkTimer = 0.3f;
     private float timer = 0;
     private bool isDead = false;
+    private AudioSource audioSource;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // FixedUpdate for physics
@@ -97,7 +99,7 @@ public class PlayerController : MonoBehaviour
             timer += Time.deltaTime;
             if (timer > walkTimer)
             {
-                AudioManager.PlayOneShot(3, 5f);
+                AudioManager.PlaySoundAtSource(3, audioSource);
                 timer = 0;
             }
         }
