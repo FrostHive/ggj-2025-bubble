@@ -119,61 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &680303905
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 680303906}
-  - component: {fileID: 680303907}
-  m_Layer: 0
-  m_Name: DialogueManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &680303906
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 680303905}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 960, y: 540, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &680303907
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 680303905}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a254e28ba1b54d4098dcc0114325798, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inputHandler: {fileID: 1563926375}
-  textComponent: {fileID: 1040870359}
-  currentlySpeaking: 0
-  dialogueTexts:
-  - "I\u2019ve landed at Ground Zero. This entire place has Filth crawling around"
-  - This is the perfect opportunity to put that Suds Spewster into action! The Filth
-    scanner is picking up a good amount of garbage blocking your path.
-  - Better get to cleaning! Good luck out there.
-  - I thought I left the janitor life behind me.
-  - "I\u2019ll be sure to clean up any Filth that gets in my way."
-  textSpeed: 0.05
 --- !u!1 &707600837
 GameObject:
   m_ObjectHideFlags: 0
@@ -817,6 +762,71 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03c7bbf4236e2a14d81e8f936463c41f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &564176032828068801
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2423497767596572986, guid: 966fd3b1b9972174d886563b53a8f80b, type: 3}
+      propertyPath: m_Name
+      value: DialogueManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 4189039711969011314, guid: 966fd3b1b9972174d886563b53a8f80b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 960
+      objectReference: {fileID: 0}
+    - target: {fileID: 4189039711969011314, guid: 966fd3b1b9972174d886563b53a8f80b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 540
+      objectReference: {fileID: 0}
+    - target: {fileID: 4189039711969011314, guid: 966fd3b1b9972174d886563b53a8f80b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4189039711969011314, guid: 966fd3b1b9972174d886563b53a8f80b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4189039711969011314, guid: 966fd3b1b9972174d886563b53a8f80b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4189039711969011314, guid: 966fd3b1b9972174d886563b53a8f80b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4189039711969011314, guid: 966fd3b1b9972174d886563b53a8f80b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4189039711969011314, guid: 966fd3b1b9972174d886563b53a8f80b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4189039711969011314, guid: 966fd3b1b9972174d886563b53a8f80b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4189039711969011314, guid: 966fd3b1b9972174d886563b53a8f80b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4870167286462665729, guid: 966fd3b1b9972174d886563b53a8f80b, type: 3}
+      propertyPath: inputHandler
+      value: 
+      objectReference: {fileID: 1563926375}
+    - target: {fileID: 4870167286462665729, guid: 966fd3b1b9972174d886563b53a8f80b, type: 3}
+      propertyPath: textComponent
+      value: 
+      objectReference: {fileID: 1040870359}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 966fd3b1b9972174d886563b53a8f80b, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -825,5 +835,5 @@ SceneRoots:
   - {fileID: 970589335}
   - {fileID: 707600841}
   - {fileID: 945651696}
-  - {fileID: 680303906}
+  - {fileID: 564176032828068801}
   - {fileID: 890377244}
