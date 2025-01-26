@@ -51,7 +51,7 @@ public class BossCombat : MonoBehaviour
         }
         if(fightHasStarted)
         {
-            if (currentAttackCooldown <= 0f & IsGrounded())
+            if (currentAttackCooldown <= 0f && IsGrounded())
             {
                 float randomAttack = Random.Range(0f, 1f);
                 if (randomAttack < gunkChargerRatio)
@@ -74,10 +74,10 @@ public class BossCombat : MonoBehaviour
             if (hasLanded != IsGrounded())
             {
                 hasLanded = IsGrounded();
-                Debug.Log($"Has Landed: {hasLanded}");
                 if (hasLanded)
                 {
-                    Facing();
+                    Flip();
+                    currentAttackCooldown = 0.2f;
                 }
             }
         }
@@ -129,19 +129,23 @@ public class BossCombat : MonoBehaviour
     }
 
 
-    private void Facing()
+    private void Flip()
     {
         //turn right when moving right
         if (!facingRight)
         {
+            Debug.Log("Now facing right");
             facingRight = true;
             transform.rotation = new Quaternion(0, 0, 0, 1);
+            return;
         }
         //turn left when moving left
         if (facingRight)
         {
+            Debug.Log("Now facing left");
             facingRight = false;
             transform.rotation = new Quaternion(0, 180, 0, 1);
+            return;
         }
     }
 }
