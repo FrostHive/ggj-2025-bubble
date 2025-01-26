@@ -27,6 +27,7 @@ public class PlayerController : MonoBehaviour
     quaternion facing = new Quaternion(0,0,0,1);
     private float walkTimer = 0.3f;
     private float timer = 0;
+    private bool isDead = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -37,7 +38,8 @@ public class PlayerController : MonoBehaviour
     // FixedUpdate for physics
     private void FixedUpdate()
     {
-        HandleMovement();
+        if(!isDead)
+            HandleMovement();
     }
 
 
@@ -132,5 +134,10 @@ public class PlayerController : MonoBehaviour
     {
         // Perform a raycast to check if the player is touching the ground
         return Physics.Raycast(transform.position, Vector3.down, 0.5f, groundLayer);
+    }
+
+    public void Dead()
+    {
+        isDead = true;
     }
 }

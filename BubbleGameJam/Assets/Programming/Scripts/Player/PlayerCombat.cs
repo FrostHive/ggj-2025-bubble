@@ -19,8 +19,9 @@ public class PlayerCombat : MonoBehaviour
     {
         if (currentHealth <= 0 && !isDead)
         {
-            StartCoroutine(Death(0));
+            StartCoroutine(Death(1));
             isDead = true;
+            GetComponent<PlayerController>().Dead();
         }
     }
     private void OnCollisionEnter(Collision collision)
@@ -56,6 +57,7 @@ public class PlayerCombat : MonoBehaviour
     private IEnumerator Death(int seconds)
     {
         //**Play death animation here
+        AudioManager.PlaySound(4);
         StartCoroutine(sceneChange.LoadGameOverScene(seconds));
 
         yield return new WaitForEndOfFrame();
