@@ -13,4 +13,14 @@ public class Bullet : MonoBehaviour
     {
         Destroy(gameObject);
     }
+
+    private void OnTriggerEnter(Collider collider)
+    {
+        if (collider.CompareTag("LockedDoor"))
+        {
+            Debug.Log("Door Unlocked");
+            //TODO change this to animation on door
+            collider.tag = "Finish";
+        }
+    }
 }

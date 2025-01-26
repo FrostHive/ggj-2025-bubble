@@ -8,6 +8,7 @@ TagManager:
   - Bubble
   - DeathTrap
   - bullet
+  - LockedDoor
   layers:
   - Default
   - TransparentFX
