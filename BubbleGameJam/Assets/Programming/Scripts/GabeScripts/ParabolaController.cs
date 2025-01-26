@@ -95,9 +95,6 @@ public class ParabolaController : MonoBehaviour
 
             if (parabolaIndexBefore != parabolaIndexAfter)
                 nextParbola = true;
-
-            //if (transform.position.y > HighestPoint.y)
-            //HighestPoint = transform.position;
         }
         else if (Animation && parabolaFly != null && animationTime > parabolaFly.GetDuration())
         {
