@@ -76,7 +76,7 @@ public class EnemyLogic : MonoBehaviour
 
                 if (!reachedDestination)
                 {
-                    if (Vector3.Distance(transform.position, endPos) <= 0.5f && isGrounded)
+                    if (Vector3.Distance(transform.position, endPos) <= 0.5f)
                     {
                         reachedDestination = true;
                         Transform[] points = paraB.getPoints();
