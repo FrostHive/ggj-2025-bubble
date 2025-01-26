@@ -238,6 +238,7 @@ GameObject:
   - component: {fileID: 4524562586026015937}
   - component: {fileID: 40885784625040796}
   - component: {fileID: 1192836644091194811}
+  - component: {fileID: 7025261871547669764}
   - component: {fileID: 3054438982725921814}
   - component: {fileID: 2845158637107633109}
   - component: {fileID: 8131913330861741383}
@@ -353,6 +354,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 120
   m_CollisionDetection: 0
+--- !u!114 &7025261871547669764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2492642317708934255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad186c3a53e52814dbcb3a3409c3162c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputHandler: {fileID: 0}
+  animator: {fileID: 0}
+  disableMovement: 0
+  disableIdle: 0
 --- !u!114 &3054438982725921814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -386,6 +403,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputHandler: {fileID: 0}
+  animator: {fileID: 0}
   baseSpeed: 5
   runMultiplier: 1.5
   jumpHeight: 200

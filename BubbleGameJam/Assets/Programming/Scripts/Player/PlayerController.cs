@@ -135,7 +135,7 @@ public class PlayerController : MonoBehaviour
     private bool IsGrounded()
     {
         // Perform a raycast to check if the player is touching the ground
-        return Physics.Raycast(transform.position, Vector3.down, 0.5f, groundLayer);
+        return Physics.Raycast(transform.position, Vector3.down, 1.2f, groundLayer);
     }
 
     public void Dead()
