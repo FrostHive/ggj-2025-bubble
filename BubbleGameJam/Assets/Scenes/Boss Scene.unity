@@ -668,6 +668,10 @@ PrefabInstance:
       propertyPath: inputHandler
       value: 
       objectReference: {fileID: 16919788}
+    - target: {fileID: 2845158637107633109, guid: 01a1947121aa4624297733535ce31e4c, type: 3}
+      propertyPath: gravityScaleDuringFall
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3054438982725921814, guid: 01a1947121aa4624297733535ce31e4c, type: 3}
       propertyPath: sceneChange
       value: 

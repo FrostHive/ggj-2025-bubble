@@ -12,6 +12,7 @@ public class BossCombat : MonoBehaviour
     [SerializeField] private float currentHealth;
 
     [SerializeField] private float maxAttackCooldown = 5f;
+    [SerializeField] private float attackCooldownAfterJump = 0.4f;
     private float currentAttackCooldown;
     [Header("Gunk Shot/Charger Throw Ratio")]
     [SerializeField, Range(0f, 1f)] private float gunkChargerRatio = 0.5f;
@@ -66,7 +67,7 @@ public class BossCombat : MonoBehaviour
                 }
 
             }
-            else
+            else if (currentAttackCooldown >= 0f && IsGrounded())
             {
                 currentAttackCooldown -= Time.fixedDeltaTime;
             }
@@ -77,7 +78,10 @@ public class BossCombat : MonoBehaviour
                 if (hasLanded)
                 {
                     Flip();
-                    currentAttackCooldown = 0.2f;
+                }
+                else
+                {
+                    currentAttackCooldown = attackCooldownAfterJump;
                 }
             }
         }
@@ -124,7 +128,6 @@ public class BossCombat : MonoBehaviour
     {
         // Perform a raycast to check if the player is touching the ground
         bool touchingGround = Physics.Raycast(groundDetectionPoint.position, Vector3.down, 0.5f, groundLayer);
-        Debug.Log($"Touching ground: {touchingGround}");
         return touchingGround;
     }
 
