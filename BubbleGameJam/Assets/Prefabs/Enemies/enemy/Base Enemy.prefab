@@ -427,6 +427,7 @@ GameObject:
   - component: {fileID: 8223930949167085844}
   - component: {fileID: 7965050193181206216}
   - component: {fileID: -5852150324596381444}
+  - component: {fileID: -4516845883248198255}
   m_Layer: 6
   m_Name: Base Enemy
   m_TagString: Enemy
@@ -586,10 +587,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   groundLayer:
     serializedVersion: 2
-    m_Bits: 0
-  type: 0
-  moveSpeed: 5
+    m_Bits: 128
+  wallLayer:
+    serializedVersion: 2
+    m_Bits: 1152
+  type: 2
+  moveSpeed: 7
   active: 1
   animator: {fileID: 0}
   waitTime: 1.5
-  detectDist: 10
+  detectDist: 5
+--- !u!114 &-4516845883248198255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8356892722193812301}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce12a6efd4f80804cab4ad5c657abb49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speed: 1
+  ParabolaRoot: {fileID: 0}
+  Autostart: 1
+  Animation: 1
