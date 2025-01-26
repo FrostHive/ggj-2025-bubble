@@ -557,12 +557,12 @@ TextureImporter:
       name: Filth_b
       rect:
         serializedVersion: 2
-        x: 2233
-        y: 437
+        x: 2195
+        y: 422
         width: 1863
         height: 1587
       alignment: 9
-      pivot: {x: 0.41430193, y: 0.5512682}
+      pivot: {x: 0.43028414, y: 0.55704105}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
