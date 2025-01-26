@@ -16,11 +16,13 @@ public class SceneChanger : MonoBehaviour
     public SceneField gameOverScene;
 
     [SerializeField] private Animator loadScreenAnim;
-    public void Awake()
+    public void Start()
     {
         if (!loadScreenAnim)
             loadScreenAnim = gameObject.GetComponentInChildren<Animator>();
         loadScreenAnim.Play("FadeIn");
+
+        PlayBGMusic();
     }
 
     public void StartGame()
@@ -82,5 +84,27 @@ public class SceneChanger : MonoBehaviour
     {
         Debug.Log("Quitting the game...");
         Application.Quit();
+    }
+
+    void PlayBGMusic()
+    {
+        int currentScene = SceneManager.GetActiveScene().buildIndex;
+ 
+        switch (currentScene)
+        { 
+            case 0: //menu scene
+                AudioManager.PlayBgMusic(0);
+                break;
+            case 1://level 1 scene
+                AudioManager.PlayBgMusic(1);
+                break;
+            case 2:// boss scene
+                AudioManager.PlayBgMusic(2);
+                break;
+            case 3: // win scene
+                break;
+            case 4:// game over
+                break;
+        }
     }
 }
