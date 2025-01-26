@@ -680,6 +680,10 @@ PrefabInstance:
       propertyPath: inputHandler
       value: 
       objectReference: {fileID: 16919788}
+    - target: {fileID: 7025261871547669764, guid: 01a1947121aa4624297733535ce31e4c, type: 3}
+      propertyPath: inputHandler
+      value: 
+      objectReference: {fileID: 16919788}
     - target: {fileID: 8131913330861741383, guid: 01a1947121aa4624297733535ce31e4c, type: 3}
       propertyPath: inputHandler
       value: 
@@ -690,7 +694,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8933570727591125256, guid: 01a1947121aa4624297733535ce31e4c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.21
+      value: 1.98
       objectReference: {fileID: 0}
     - target: {fileID: 8933570727591125256, guid: 01a1947121aa4624297733535ce31e4c, type: 3}
       propertyPath: m_LocalPosition.z
