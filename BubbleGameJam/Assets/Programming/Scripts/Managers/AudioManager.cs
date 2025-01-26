@@ -5,7 +5,7 @@ using UnityEngine.Audio;
 public class AudioManager : MonoBehaviour
 {
 
-    static AudioManager ACIVEMIXER = null;
+    public static AudioManager ACIVEMIXER = null;
 
     public AudioClip[] bgSounds;
     public AudioClip[] sounds;

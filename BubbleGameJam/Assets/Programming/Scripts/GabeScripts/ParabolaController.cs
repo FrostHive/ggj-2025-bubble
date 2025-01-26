@@ -38,10 +38,13 @@ public class ParabolaController : MonoBehaviour
 
     void OnDrawGizmos()
     {
-        if (gizmo == null)
+        if (gizmo == null && ParabolaRoot)
         {
             gizmo = new ParabolaFly(ParabolaRoot.transform);
         }
+
+        if (gizmo == null)
+            return;
 
         gizmo.RefreshTransforms(1f);
         if ((gizmo.Points.Length - 1) % 2 != 0)
