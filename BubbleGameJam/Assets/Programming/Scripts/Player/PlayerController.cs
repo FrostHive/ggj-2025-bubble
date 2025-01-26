@@ -1,6 +1,7 @@
 using System;
 using System.ComponentModel;
 using Unity.Mathematics;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -10,10 +11,14 @@ public class PlayerController : MonoBehaviour
     [Header("Movement")]
     [SerializeField] private float baseSpeed = 5f;
     [SerializeField] private float runMultiplier = 1.5f;
-    [SerializeField] private float jumpHeight = 3f;
+    [SerializeField] private float jumpHeight = 200f;
     [SerializeField] private LayerMask groundLayer; // For ground detection
-    [SerializeField] private float gravityScaleDuringFall = 20.0f; // Scale for gravity effect
-
+    [SerializeField] private float gravityScaleDuringFall = 10.0f; // Scale for gravity effect
+    [SerializeField] private float jumpCooldown = 0.25f;
+    [SerializeField] private int maxJumps = 2;
+    private int usedJumps = 0;
+    private float timeSinceJump = 0;
+    private bool letGoOfJump;
     private Rigidbody rigidbody;
     private bool hasJumped;
     private bool fastFall;
@@ -41,26 +46,31 @@ public class PlayerController : MonoBehaviour
 
         // Check if player is grounded
         bool isGrounded = IsGrounded();
-
+        
         // Handle jumping
-        if (inputHandler.jumpTriggered && !hasJumped && isGrounded)
+        if (inputHandler.jumpTriggered && usedJumps < maxJumps && timeSinceJump > jumpCooldown && letGoOfJump)
         {
+            rigidbody.linearVelocity = Vector3.zero;
             Vector3 jumpForce = new Vector3(0f, Mathf.Sqrt(2 * jumpHeight * Physics.gravity.magnitude), 0f);
             rigidbody.AddForce(jumpForce, ForceMode.Impulse);
-            hasJumped = true;
+            usedJumps += 1;
+            timeSinceJump = 0;
+            letGoOfJump = false;
         }
-
-        if (!fastFall)
+        // Cooldown the jump
+        // player has to let go of jump button to jump again
+        if (!inputHandler.jumpTriggered)
         {
-            //if falling
-            if (rigidbody.linearVelocity.y <= -0.5f)
-            {
-                fastFall = true;
-                rigidbody.AddForce(Physics.gravity * gravityScaleDuringFall - Physics.gravity, ForceMode.Acceleration);
-                Debug.Log("fastFall");
-            }
+            letGoOfJump = true;
         }
+        timeSinceJump += Time.deltaTime;
 
+        //if falling
+        if (rigidbody.linearVelocity.y <= -0.5f)
+        {
+            fastFall = true;
+            rigidbody.AddForce(Physics.gravity * gravityScaleDuringFall - Physics.gravity, ForceMode.Acceleration);
+        }
         // Apply sprint multiplier if applicable
         if (inputHandler.sprintValue > 0f)
         {
@@ -71,17 +81,17 @@ public class PlayerController : MonoBehaviour
         Vector3 velocity = rigidbody.linearVelocity;
         velocity.x = currentMovement.x;
         rigidbody.linearVelocity = velocity;
-
+        // Apply rotation
+        transform.rotation = facing;
+        //transform.rotation = Quaternion.Slerp(transform.rotation, facing, timeCount);
+        //timeCount = timeCount + Time.deltaTime;
         
         if (isGrounded)
         {
-            // Reset jumping state if grounded
-            hasJumped = false;
-            //undo bonus gravity from fastfall
-            if (fastFall == true)
+            // Reset jumping state if grounded and off cooldown
+            if ( timeSinceJump > jumpCooldown)
             {
-                fastFall = false;
-                rigidbody.AddForce(-Physics.gravity * gravityScaleDuringFall - Physics.gravity, ForceMode.Acceleration);
+                usedJumps = 0;
             }
             //flip direction of character movement only when on the ground
             Facing();
@@ -90,26 +100,25 @@ public class PlayerController : MonoBehaviour
 
     private void Facing()
     {
-        //turn right
+        //turn right when moving right
         if (rigidbody.linearVelocity.x > 0f && !facingRight)
         {
             timeCount = 0;
             facingRight = true;
             facing = new Quaternion(0, 0, 0, 1);
         }
+        //turn left when moving left
         if (rigidbody.linearVelocity.x < 0f && facingRight)
         {
             timeCount = 0;
             facingRight = false;
             facing = new Quaternion(0, 180, 0, 1);
         }
-        transform.rotation = Quaternion.Slerp(transform.rotation, facing, timeCount);
-        timeCount = timeCount + Time.deltaTime;
     }
 
     private bool IsGrounded()
     {
         // Perform a raycast to check if the player is touching the ground
-        return Physics.Raycast(transform.position, Vector3.down, 1f, groundLayer);
+        return Physics.Raycast(transform.position, Vector3.down, 0.5f, groundLayer);
     }
 }
