@@ -47,7 +47,6 @@ public class PlayerController : MonoBehaviour
 
     private void HandleMovement()
     {
-        
         Vector3 currentMovement = new Vector3(inputHandler.moveInput.x, 0f, 0f) * baseSpeed;
 
         // Check if player is grounded
@@ -61,6 +60,7 @@ public class PlayerController : MonoBehaviour
             rigidbody.AddForce(jumpForce, ForceMode.Impulse);
             usedJumps += 1;
             timeSinceJump = 0;
+            fastFall = false;
             letGoOfJump = false;
             timer = 0;
         }
@@ -101,9 +101,12 @@ public class PlayerController : MonoBehaviour
                 timer = 0;
             }
         }
+        //Animation for falling
+        animator.SetBool("Falling", fastFall);
 
         if (isGrounded)
         {
+            fastFall = false;
             // Reset jumping state if grounded and off cooldown
             if ( timeSinceJump > jumpCooldown)
             {
