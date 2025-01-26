@@ -243,7 +243,6 @@ GameObject:
   - component: {fileID: 2845158637107633109}
   - component: {fileID: 8131913330861741383}
   - component: {fileID: 3547036137903410834}
-  - component: {fileID: 3435148989967617105}
   - component: {fileID: 2618364360237769140}
   m_Layer: 3
   m_Name: Player
@@ -387,7 +386,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneChange: {fileID: 0}
   isDead: 0
-  currentHealth: 5
+  currentHealth: 10
   maxHealth: 10
   enemyLayer:
     serializedVersion: 2
@@ -449,28 +448,8 @@ MonoBehaviour:
   inputHandler: {fileID: 0}
   bulletSpawnPoint: {fileID: 6113959960552093200}
   bulletPrefab: {fileID: 7180480588772295725, guid: e111a70209654274d814c2150e8e4e9a, type: 3}
-  bulletSpeed: 5
+  bulletSpeed: 15
   fireCooldown: 0.5
---- !u!114 &3435148989967617105
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2492642317708934255}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8dae5e572d9e6e24dab0a4f5b732c09e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerBody: {fileID: 1192836644091194811}
-  currentFuel: 100
-  consumptionSpeed: 1
-  maxFuel: 100
-  jetSpeed: 0
-  forceRate: 1
-  maxSpeed: 10
-  maxYVelocity: 10
 --- !u!114 &2618364360237769140
 MonoBehaviour:
   m_ObjectHideFlags: 0

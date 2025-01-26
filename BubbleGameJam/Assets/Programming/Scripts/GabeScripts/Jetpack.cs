@@ -42,20 +42,21 @@ public class Jetpack : MonoBehaviour
         }
 
         //if the speed value is positive, the jetpack will move the player upwards.  If its zero or netagive, it will stop adding force and allow the player to fall with their own gravity.
-        if(jetSpeed > 0)
-        {
+        //if(jetSpeed > 0)
+        //{
             Vector3 rBodySpeed = Vector3.zero;
             rBodySpeed.y = jetSpeed;
             playerBody.AddForce(rBodySpeed,ForceMode.Impulse);
 
-            if(playerBody.linearVelocity.y > maxYVelocity)
-            {
-                Vector3 temp = playerBody.linearVelocity;
-                temp.y = maxYVelocity;
-                playerBody.linearVelocity = temp;
-            }
+        if (playerBody.linearVelocity.y > maxYVelocity)
+        {
+            Vector3 temp = playerBody.linearVelocity;
+            temp.y = maxYVelocity;
+            playerBody.linearVelocity = temp;
+            //   }
         }
-        else if(jetSpeed < 0)
+        
+        if(jetSpeed < 0)
         {
             jetSpeed = 0;
         }
