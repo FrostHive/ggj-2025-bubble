@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Dialogue : MonoBehaviour
 {
+    [SerializeField] private PlayerInputHandler inputHandler;
     public TextMeshProUGUI textComponent;
     public string[] dialogueTexts;
     public float textSpeed;
@@ -17,9 +18,20 @@ public class Dialogue : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        if(inputHandler.attackTriggered)
+        {
+            if (textComponent.text == dialogueTexts[index])
+            {
+                NextLine();
+            }
+            else
+            {
+                StopAllCoroutines();
+                textComponent.text = dialogueTexts[index];
+            }
+        }
     }
 
     private void StartDialogue()
@@ -28,12 +40,26 @@ public class Dialogue : MonoBehaviour
         StartCoroutine(TypeLine());
     }
 
-    IEnumerator TypeLine()
+    private IEnumerator TypeLine()
     {
         foreach (char c in dialogueTexts[index].ToCharArray())
         {
             textComponent.text += c;
             yield return new WaitForSeconds(textSpeed);
+        }
+    }
+
+    public void NextLine()
+    {
+        if(index < dialogueTexts.Length - 1)
+        {
+            index++;
+            textComponent.text = string.Empty;
+            StartCoroutine(TypeLine());
+        }
+        else
+        {
+            gameObject.SetActive(false);
         }
     }
 }
