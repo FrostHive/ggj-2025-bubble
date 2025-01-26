@@ -588,12 +588,15 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 128
-  type: 0
-  moveSpeed: 5
+  wallLayer:
+    serializedVersion: 2
+    m_Bits: 1152
+  type: 2
+  moveSpeed: 7
   active: 1
   animator: {fileID: 0}
   waitTime: 1.5
-  detectDist: 10
+  detectDist: 5
 --- !u!114 &-4516845883248198255
 MonoBehaviour:
   m_ObjectHideFlags: 0

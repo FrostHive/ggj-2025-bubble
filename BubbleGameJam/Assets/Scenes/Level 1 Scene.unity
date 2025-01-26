@@ -3460,6 +3460,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Trash_Can (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9b30655e31636be42bc0ef98f95ee1ef, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3942,6 +3946,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 9b30655e31636be42bc0ef98f95ee1ef, type: 3}
       propertyPath: m_Name
       value: Trash_Can
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9b30655e31636be42bc0ef98f95ee1ef, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6038,6 +6046,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Trash_Can (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9b30655e31636be42bc0ef98f95ee1ef, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7286,18 +7298,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 472988177}
     m_Modifications:
-    - target: {fileID: -5852150324596381444, guid: 4b2cfee77ad0cd24ea7a26b7312d5bea, type: 3}
-      propertyPath: type
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: -5852150324596381444, guid: 4b2cfee77ad0cd24ea7a26b7312d5bea, type: 3}
-      propertyPath: moveSpeed
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: -5852150324596381444, guid: 4b2cfee77ad0cd24ea7a26b7312d5bea, type: 3}
-      propertyPath: detectDist
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 2215021224297028484, guid: 4b2cfee77ad0cd24ea7a26b7312d5bea, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.1263847
@@ -7804,6 +7804,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 9b30655e31636be42bc0ef98f95ee1ef, type: 3}
       propertyPath: m_Name
       value: Trash_Can (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9b30655e31636be42bc0ef98f95ee1ef, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8480,6 +8484,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 9b30655e31636be42bc0ef98f95ee1ef, type: 3}
       propertyPath: m_Name
       value: Trash_Can (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9b30655e31636be42bc0ef98f95ee1ef, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10734,6 +10742,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Trash_Can (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9b30655e31636be42bc0ef98f95ee1ef, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10871,6 +10883,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -5852150324596381444, guid: 4b2cfee77ad0cd24ea7a26b7312d5bea, type: 3}
       propertyPath: type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4516845883248198255, guid: 4b2cfee77ad0cd24ea7a26b7312d5bea, type: 3}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -4516845883248198255, guid: 4b2cfee77ad0cd24ea7a26b7312d5bea, type: 3}
@@ -11319,6 +11335,10 @@ PrefabInstance:
       propertyPath: inputHandler
       value: 
       objectReference: {fileID: 16919788}
+    - target: {fileID: 2845158637107633109, guid: 01a1947121aa4624297733535ce31e4c, type: 3}
+      propertyPath: groundLayer.m_Bits
+      value: 1153
+      objectReference: {fileID: 0}
     - target: {fileID: 3054438982725921814, guid: 01a1947121aa4624297733535ce31e4c, type: 3}
       propertyPath: sceneChange
       value: 

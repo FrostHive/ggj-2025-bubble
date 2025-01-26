@@ -4,7 +4,7 @@ using System;
 public class EnemyLogic : MonoBehaviour
 {
     [SerializeField] private LayerMask groundLayer; // For ground detection
-
+    [SerializeField] private LayerMask wallLayer; // For charging enemies to detect running into walls
     private Rigidbody rBody;
     public enum EnemyType {FLOAT, JUMP, CHARGE};
     public EnemyType type;
@@ -27,6 +27,7 @@ public class EnemyLogic : MonoBehaviour
 
     [Header("Charge Variables")]
     [SerializeField] float detectDist = 10f; //the distance it takes for the enemy to detect the player
+    int chargeDir = -1;
     bool charging = false;
     Vector3 chargeTarget;
 
@@ -100,7 +101,8 @@ public class EnemyLogic : MonoBehaviour
                 if (charging)//if charging at the player, move towards their detected position
                 {
                     transform.position = Vector3.MoveTowards(transform.position, chargeTarget, moveSpeed*0.01f);
-                    if (Vector3.Distance(transform.position, chargeTarget) <= 0.5f)
+
+                    if (Vector3.Distance(transform.position, chargeTarget) <= 0.5f || WallCheck())
                     { 
                         charging = false;
                         reachedDestination = true;
@@ -116,13 +118,16 @@ public class EnemyLogic : MonoBehaviour
                             reachedDestination = false;
                         }
                     }
-                    else 
-                        if (Vector3.Distance(transform.position, player.transform.position) <= detectDist)
-                        {
-                            charging = true;
-                            chargeTarget = player.transform.position;
-                            //AudioManager.PlaySound(0);//change source to whatver sound we want
-                        }
+                    else if (Vector3.Distance(transform.position, player.transform.position) <= detectDist)
+                    {
+                        charging = true;
+                        chargeTarget = player.transform.position;
+                        if (chargeTarget.x < transform.position.x)
+                            chargeDir = -1;
+                        else
+                            chargeDir = 1;
+                        //AudioManager.PlaySound(0);//change source to whatver sound we want
+                    }
                 }
                 break;
 
@@ -134,6 +139,11 @@ public class EnemyLogic : MonoBehaviour
         return Physics.Raycast(transform.position, Vector3.down, 1f, groundLayer);
     }
 
+    private bool WallCheck()
+    {
+        // Perform a raycast to check if the player has collided with a wall
+        return Physics.Raycast(transform.position, Vector3.right*chargeDir, 1f, wallLayer);
+    }
     public void DefeatEnemy()
     {
         //play death animation
