@@ -4,8 +4,12 @@ using UnityEngine.UIElements.Experimental;
 
 public class BossCombat : MonoBehaviour
 {
+    [Header("General")]
+    [SerializeField] private SceneChanger sceneChanger;
     [SerializeField] private bool isDead;
     public bool fightHasStarted;
+    [SerializeField] private float maxHealth = 10f;
+    [SerializeField] private float currentHealth;
 
     [SerializeField] private float maxAttackCooldown = 5f;
     private float currentAttackCooldown;
@@ -30,6 +34,7 @@ public class BossCombat : MonoBehaviour
     private Rigidbody rigidbody;
     private void Start()
     {
+        currentHealth = maxHealth;
         currentAttackCooldown = .1f;
         if(rigidbody == null)
         {
@@ -41,6 +46,7 @@ public class BossCombat : MonoBehaviour
     {
         if(isDead)
         {
+            sceneChanger.LoadWinScene();
             return;
         }
         if(fightHasStarted)
@@ -68,13 +74,29 @@ public class BossCombat : MonoBehaviour
             if (hasLanded != IsGrounded())
             {
                 hasLanded = IsGrounded();
+                Debug.Log($"Has Landed: {hasLanded}");
                 if (hasLanded)
                 {
                     Facing();
                 }
             }
         }
+        if (currentHealth < 0f)
+        {
+            isDead = true;
+        }
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        GameObject collider = collision.gameObject;
+
+        if (collider.CompareTag("Bubble"))
+        {
+            currentHealth -= 5f; //Temporary health
+        }
+    }
+
     private void GunkShot()
     {
         Debug.Log("Boss Bullet has been created");
@@ -86,15 +108,6 @@ public class BossCombat : MonoBehaviour
             Debug.Log("Boss Bullet instantiated and velocity set");
         }
     }
-
-    private bool IsGrounded()
-    {
-        // Perform a raycast to check if the player is touching the ground
-        bool touchingGround = Physics.Raycast(groundDetectionPoint.position, Vector3.down, 0.5f, groundLayer);
-        Debug.Log($"Touching ground: {touchingGround}");
-        return touchingGround;
-    }
-
     private void ChargerThrow()
     {
         Debug.Log("Charger has been created");
@@ -106,6 +119,15 @@ public class BossCombat : MonoBehaviour
             Debug.Log("Charger instantiated and velocity set");
         }
     }
+
+    private bool IsGrounded()
+    {
+        // Perform a raycast to check if the player is touching the ground
+        bool touchingGround = Physics.Raycast(groundDetectionPoint.position, Vector3.down, 0.5f, groundLayer);
+        Debug.Log($"Touching ground: {touchingGround}");
+        return touchingGround;
+    }
+
 
     private void Facing()
     {
