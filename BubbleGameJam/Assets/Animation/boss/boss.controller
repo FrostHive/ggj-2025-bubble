@@ -114,7 +114,7 @@ AnimatorController:
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
-    m_DefaultBool: 0
+    m_DefaultBool: 1
     m_Controller: {fileID: 9100000}
   - m_Name: shoot
     m_Type: 9
@@ -250,7 +250,7 @@ AnimatorStateMachine:
     m_Position: {x: 70, y: 110, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 5863584731326241896}
-    m_Position: {x: 230, y: 230, z: 0}
+    m_Position: {x: 60, y: 200, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -8475349227129898502}
     m_Position: {x: 480, y: 230, z: 0}
