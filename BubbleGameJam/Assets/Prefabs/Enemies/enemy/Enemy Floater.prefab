@@ -29,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.86074, y: 2.86074, z: 2.86074}
+  m_LocalScale: {x: 3.12588, y: 3.12588, z: 3.12588}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2215021224297028484}
@@ -184,7 +184,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1290474650, guid: 0126aa0542c702242b60db55af0b4ccd, type: 3}
+  m_Sprite: {fileID: -828046134, guid: 7c7c42d156db9a64db2cf45c197ef463, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -212,7 +212,7 @@ GameObject:
   - component: {fileID: -5852150324596381444}
   - component: {fileID: -4516845883248198255}
   m_Layer: 6
-  m_Name: Base Enemy
+  m_Name: Enemy Floater
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -307,8 +307,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.7679138, y: 1.6824465, z: 24.214165}
-  m_Center: {x: -0.14531326, y: 0.34122324, z: -1.0335958}
+  m_Size: {x: 1.3172417, y: 1.6824465, z: 24.214165}
+  m_Center: {x: -0.12941551, y: 0.34122324, z: -1.0335958}
 --- !u!54 &8223930949167085844
 Rigidbody:
   m_ObjectHideFlags: 0

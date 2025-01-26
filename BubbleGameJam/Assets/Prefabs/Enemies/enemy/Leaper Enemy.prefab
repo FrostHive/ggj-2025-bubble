@@ -28,8 +28,8 @@ Transform:
   m_GameObject: {fileID: 5642071324449329278}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.86074, y: 2.86074, z: 2.86074}
+  m_LocalPosition: {x: -0.077, y: 0.132, z: 0}
+  m_LocalScale: {x: 2.6122031, y: 2.6122031, z: 2.6122031}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2215021224297028484}
@@ -184,7 +184,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1290474650, guid: 0126aa0542c702242b60db55af0b4ccd, type: 3}
+  m_Sprite: {fileID: 703456301, guid: 442de3af86ec85e4db796578473619d7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -212,7 +212,7 @@ GameObject:
   - component: {fileID: -5852150324596381444}
   - component: {fileID: -4516845883248198255}
   m_Layer: 6
-  m_Name: Base Enemy
+  m_Name: Leaper Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

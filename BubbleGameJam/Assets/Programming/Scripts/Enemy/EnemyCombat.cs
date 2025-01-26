@@ -80,6 +80,6 @@ public class EnemyCombat : MonoBehaviour
     private bool PlayerOnTop()
     {
         // Perform a raycast to check if the player is on top of an enemy
-        return Physics.SphereCast(transform.position, 0.5f, Vector3.up, out RaycastHit hitInfo, 0.5f, playerLayer);
+        return Physics.SphereCast(transform.position, 10f, Vector3.up, out RaycastHit hitInfo, 10f, playerLayer);
     }
 }
