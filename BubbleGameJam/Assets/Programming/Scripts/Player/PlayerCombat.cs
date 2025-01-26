@@ -4,6 +4,7 @@ using UnityEngine;
 public class PlayerCombat : MonoBehaviour
 {
     [SerializeField] private SceneChanger sceneChange;
+    [SerializeField] private Animator animator;
     [SerializeField] private bool isDead = false;
 
     [SerializeField] private int currentHealth;
@@ -14,6 +15,7 @@ public class PlayerCombat : MonoBehaviour
     private void Start()
     {
         currentHealth = maxHealth;
+        animator = GetComponent<Animator>();
     }
     private void Update()
     {
@@ -67,8 +69,10 @@ public class PlayerCombat : MonoBehaviour
     public IEnumerator TakeDamage(int damageAmount)
     {
         //Play damage animation
-        yield return null;
+        animator.SetBool("Damaged", true);
         currentHealth -= damageAmount;
+        yield return new WaitForSeconds(0.32f);
+        animator.SetBool("Damaged", false);
     }
 
     private bool IsOnEnemy()
