@@ -13,7 +13,13 @@ public class BossCombat : MonoBehaviour
 
     [SerializeField] private float maxAttackCooldown = 5f;
     [SerializeField] private float attackCooldownAfterJump = 0.4f;
+    [SerializeField] private float maxJumpCooldown = 10f;
+    public float currentJumpCooldown = 10f;
+
     private float currentAttackCooldown;
+
+    public bool isAttacking = false;
+
     [Header("Gunk Shot/Charger Throw Ratio")]
     [SerializeField, Range(0f, 1f)] private float gunkChargerRatio = 0.5f;
 
@@ -65,7 +71,7 @@ public class BossCombat : MonoBehaviour
                     ChargerThrow();
                     currentAttackCooldown = maxAttackCooldown;
                 }
-
+                isAttacking = true;
             }
             else if (currentAttackCooldown >= 0f && IsGrounded())
             {
@@ -78,11 +84,18 @@ public class BossCombat : MonoBehaviour
                 if (hasLanded)
                 {
                     Flip();
+                    currentJumpCooldown = maxJumpCooldown;
                 }
                 else
                 {
+                    currentJumpCooldown = -1f;
                     currentAttackCooldown = attackCooldownAfterJump;
+                    isAttacking = false;
                 }
+            }
+            if (currentJumpCooldown >= 0f)
+            {
+                currentJumpCooldown -= Time.fixedDeltaTime;
             }
         }
         if (currentHealth < 0f)
@@ -128,7 +141,7 @@ public class BossCombat : MonoBehaviour
         }
     }
 
-    private bool IsGrounded()
+    public bool IsGrounded()
     {
         // Perform a raycast to check if the player is touching the ground
         bool touchingGround = Physics.Raycast(groundDetectionPoint.position, Vector3.down, 0.5f, groundLayer);
