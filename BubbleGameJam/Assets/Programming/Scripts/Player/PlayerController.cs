@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
     }
 
     // FixedUpdate for physics
-    private void FixedUpdate()
+    private void Update()
     {
         if(!isDead)
             HandleMovement();

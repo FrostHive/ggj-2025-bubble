@@ -643,7 +643,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a382817966cf2d4fa6a4e857cbab321, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTransform: {fileID: 0}
+  playerTransform: {fileID: 581656188}
   currentMode: 1
   isoOffset: {x: -10, y: 10, z: -10}
   isoRotation: {x: 35, y: 45, z: 0}
@@ -946,6 +946,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 6396509976709634864, guid: a28cf3e35b315cf4c81896e87d90879f, type: 3}
   m_PrefabInstance: {fileID: 482837580}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &581656188 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8933570727591125256, guid: 01a1947121aa4624297733535ce31e4c, type: 3}
+  m_PrefabInstance: {fileID: 340603177}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &602252098
 GameObject:
@@ -2721,7 +2726,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5271274016820135842, guid: d6000782c33471f45ac9dc9f1bf46d89, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5638119521254724763, guid: d6000782c33471f45ac9dc9f1bf46d89, type: 3}
       propertyPath: m_LocalPosition.x

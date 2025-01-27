@@ -43,13 +43,14 @@ public class BossCombat : MonoBehaviour
     {
         currentHealth = maxHealth;
         currentAttackCooldown = .1f;
+        isDead = false;
         if(rigidbody == null)
         {
             rigidbody = GetComponent<Rigidbody>();
         }
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         if(isDead)
         {

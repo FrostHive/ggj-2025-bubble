@@ -96,14 +96,21 @@ public class SceneChanger : MonoBehaviour
                 AudioManager.PlayBgMusic(0);
                 break;
             case 1://level 1 scene
+                Debug.Log("Playing Level 1 Scene Music!");
                 AudioManager.PlayOneShot(5,1f);
                 AudioManager.PlayBgMusic(1);
+                
                 break;
             case 2:// boss scene
+                Debug.Log("Playing Boss Scene Music!");
                 AudioManager.PlayOneShot(6,1f);
                 AudioManager.PlayBgMusic(2);
+                
                 break;
             case 3: // win scene
+                Debug.Log("Playing Win Scene Music!");
+                AudioManager.PlayBgMusic(4);
+                
                 break;
             case 4:// game over
                 break;

@@ -19,9 +19,9 @@ public class AudioManager : MonoBehaviour
         if (ACTIVEMIXER == null)
         {
             ACTIVEMIXER = this;
-            if (audioSource == null) audioSource = FindFirstObjectByType<AudioSource>();
-            if (bgSource == null) bgSource = audioSource;
         }
+        if (audioSource == null) audioSource = FindFirstObjectByType<AudioSource>();
+        if (bgSource == null) bgSource = audioSource;
     }
 
     static public void PlaySound(string name)
@@ -65,6 +65,7 @@ public class AudioManager : MonoBehaviour
     {
         if (ACTIVEMIXER.bgSource.isPlaying)
             ACTIVEMIXER.bgSource.Stop();
+        Debug.Log(index.ToString());
         ACTIVEMIXER.bgSource.clip = ACTIVEMIXER.bgSounds[index];
         ACTIVEMIXER.bgSource.Play();
     }
@@ -72,7 +73,8 @@ public class AudioManager : MonoBehaviour
     {
         ACTIVEMIXER.bgSource.Stop();
     }
-
+    
+    /*
     static public void PlayOneShot(string name, float volume)
     {
         AudioClip fClip = ACTIVEMIXER.GetSound(name);
@@ -82,8 +84,12 @@ public class AudioManager : MonoBehaviour
             ACTIVEMIXER.audioSource.PlayOneShot(fClip, volume);
         }
     }
+    */
+
     static public void PlayOneShot(int pIndex, float pVolume)
     {
+        Debug.Log(pIndex.ToString());
+
         AudioClip fClip = ACTIVEMIXER.sounds[pIndex];
         if (!ACTIVEMIXER.audioSource.isPlaying)
         {

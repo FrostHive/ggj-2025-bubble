@@ -14,7 +14,7 @@ public class PlayerKick : MonoBehaviour
         currentCooldown = 0f;
     }
 
-    void FixedUpdate()
+    void Update()
     {
         if(inputHandler.kickTriggered && currentCooldown <= 0f)
         {
