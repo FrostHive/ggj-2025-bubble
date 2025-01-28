@@ -20,7 +20,7 @@ public class Jetpack : MonoBehaviour
     }
 
 
-    void FixedUpdate()
+    void Update()
     {
         //if you activate the jetpack, it will build up speed until it reaches max.  If you don't press it, the jetpack will loose speed.
         if(Input.GetKey(KeyCode.LeftShift))

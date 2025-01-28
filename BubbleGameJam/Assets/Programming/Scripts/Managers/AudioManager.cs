@@ -74,7 +74,7 @@ public class AudioManager : MonoBehaviour
         ACTIVEMIXER.bgSource.Stop();
     }
     
-    /*
+    
     static public void PlayOneShot(string name, float volume)
     {
         AudioClip fClip = ACTIVEMIXER.GetSound(name);
@@ -84,7 +84,7 @@ public class AudioManager : MonoBehaviour
             ACTIVEMIXER.audioSource.PlayOneShot(fClip, volume);
         }
     }
-    */
+    
 
     static public void PlayOneShot(int pIndex, float pVolume)
     {

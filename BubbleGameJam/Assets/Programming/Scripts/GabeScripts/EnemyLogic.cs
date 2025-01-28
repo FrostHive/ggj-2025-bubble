@@ -1,5 +1,6 @@
 using UnityEngine;
 using System;
+using Unity.VisualScripting;
 
 public class EnemyLogic : MonoBehaviour
 {
@@ -58,7 +59,7 @@ public class EnemyLogic : MonoBehaviour
     }
 
 
-        void FixedUpdate()
+    void Update()
     {
         if (!active)
             return;
